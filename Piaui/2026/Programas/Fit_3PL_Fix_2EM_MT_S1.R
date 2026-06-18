@@ -36,7 +36,7 @@ dados_dir <- file.path(proj_dir, "Dados")
 folder <- "ResultadosTRI_2EM_MT"
 
 # Subpasta específica desta análise
-subfolder <- "Simulado_II"
+subfolder <- "Simulado_I"
 
 # Diretório final de saída
 result_dir <- file.path(proj_dir, folder, subfolder)
@@ -62,7 +62,7 @@ cat("==============================\n\n")
 # =======================================================
 
 # 2.1) Leitura do banco RDS já higienizado em etapa anterior
-base <- readRDS(file.path(dados_dir, "df_2ª_SIMULA_2ª_SÉRIE.RDS"))
+base <- readRDS(file.path(dados_dir, "df_1ª_SIMULA_2ª_SÉRIE.RDS"))
 colnames(base) <- trimws(colnames(base))
 
 # 2.2) Filtra disciplina Matemática
@@ -124,7 +124,7 @@ num_alter <- 5
 # =======================================================
 
 
-InfoItens<-read_xlsx(file.path(dados_dir,'gabarito_2serie_mt 2ª SIMULA.xlsx'),sheet = 'MT-SimII')
+InfoItens<-read_xlsx(file.path(dados_dir,'gabarito_2serie_mt 1ª SIMULA.xlsx'),sheet = 'MT-SimI')
 
 # Eliminando itens
 
@@ -137,7 +137,7 @@ InfoItens<-read_xlsx(file.path(dados_dir,'gabarito_2serie_mt 2ª SIMULA.xlsx'),s
 
 v_item_conhecido <- !is.na(InfoItens$Conhecido)
 # 
-InfoItens <- InfoItens %>% filter(Conhecido=='Prova25')
+InfoItens <- InfoItens %>% filter(Conhecido=='Prova25' | Conhecido=='SimII')
 # 
 # InfoItens$JULHO <-paste0('rpa_0',InfoItens$JULHO)
 # 
@@ -487,7 +487,7 @@ dev.off()
 base$Theta<-rthetaML3PT
 
 
-write.xlsx(base,paste(result_dir,sep="/BaseRespTheta_2EM_MT_S2",".xlsx"),rowNames=T)
+write.xlsx(base,paste(result_dir,sep="/BaseRespTheta_2EM_MT_S1",".xlsx"),rowNames=T)
 
 
 
@@ -517,7 +517,7 @@ freqTheta<-as.data.frame(freqTheta)
 
 apply(freqTheta,2,sum)
 
-write.xlsx(freqTheta,paste(result_dir,sep="/DistriAlunosClasseMT2serie_S2",".xlsx"),rowNames=T)
+write.xlsx(freqTheta,paste(result_dir,sep="/DistriAlunosClasseMT2serie_S1",".xlsx"),rowNames=T)
 
 freqTheta<-format(freqTheta,decimal.mark=",")
 
@@ -533,7 +533,7 @@ TabItens<-data.frame(Item=nomesitens,a=ea,b=eb,aSAEB=ea/sigma,bSAEB=sigma*eb+mu,
 
 #TabItens[,2:6]<-round(TabItens[,-c(1,7)],3)
 
-write.xlsx(TabItens,paste(result_dir,sep="/EstItens_2EM_MT_S2",".xlsx"),rowNames=F)
+write.xlsx(TabItens,paste(result_dir,sep="/EstItens_2EM_MT_S1",".xlsx"),rowNames=F)
 
 TabItens<-format(TabItens,decimal.mark=",")
 
@@ -557,7 +557,7 @@ names(med_resu)<-c("media","dp","cv(%)","min.","1o Q",
                    "curt.")
 
 
-write.xlsx(as.data.frame(med_resu),paste(result_dir,sep="/ResumoTheta_2EM_MT_S2",".xlsx"),rowNames=T)
+write.xlsx(as.data.frame(med_resu),paste(result_dir,sep="/ResumoTheta_2EM_MT_S1",".xlsx"),rowNames=T)
 
 round(med_resu,3)
 
@@ -572,7 +572,7 @@ EstPop<-round(rbind(EstPopThetaT,EstPopTheta),3)
 
 rownames(EstPop)<-c("SAEB","(0,1)")
 
-write.xlsx(rbind(EstPop),paste(result_dir,sep="/ResumoThetaIC_2EM_MT_S2",".xlsx"),rowNames=T)
+write.xlsx(rbind(EstPop),paste(result_dir,sep="/ResumoThetaIC_2EM_MT_S1",".xlsx"),rowNames=T)
 
 
 #xtable(EstPop)
@@ -669,19 +669,6 @@ plot(RMSEA,xlab="pares de itens",
 abline(h=0.05,lwd=2,lty=2,col="green")
 abline(h=0.10,lwd=2,lty=2,col="green")
 dev.off()
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
