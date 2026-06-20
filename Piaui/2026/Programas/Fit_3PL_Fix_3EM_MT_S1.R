@@ -70,10 +70,10 @@ base <- base %>%
   dplyr::filter(disciplina_descricao == "MATEMÁTICA")
 
 # 2.3) Elimina itens/colunas específicas, se necessário
-# suppressWarnings({
-#   base <- base %>%
-#     dplyr::select(-dplyr::any_of(c("rpa_024", "rp_024")))
-# })
+suppressWarnings({
+  base <- base %>%
+    dplyr::select(-dplyr::any_of(c("rpa_008", "rp_008")))
+})
 
 # 2.4) Extrai gabarito: colunas "rp_*", exceto "rpa_*"
 gabar_cols <- base %>%
@@ -128,7 +128,7 @@ InfoItens<-read_xlsx(file.path(dados_dir,'gabarito_3serie_mt 1ª SIMULA.xlsx'),s
 
 # Eliminando itens
 
-#InfoItens<- InfoItens %>% filter(Item!='rpa_022')
+InfoItens<- InfoItens %>% filter(Item!='rpa_008')
 
 
 # # # Constantes de Transformação
