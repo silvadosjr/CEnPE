@@ -453,7 +453,7 @@ def build_report(data, charts):
         lead = (
             "Leitura principal. As duas aplicações apresentaram provas exigentes para a população avaliada. "
             "No Simulado I, o item 8 mostrou discriminação praticamente nula; no Simulado II, o mesmo ocorreu com o item 14. "
-            "Ambos foram excluídos da calibração TRI, em coerência com os indícios de conflito de gabarito registrados pela equipe."
+            "O item 8 foi mantido na nova calibração TRI, apesar da ressalva; o item 14 permaneceu excluído, em coerência com os indícios de conflito de gabarito."
         )
     elif PROFILE == "3EM_LP":
         lead = (
@@ -614,7 +614,7 @@ def build_report(data, charts):
             doc,
             ["Aplicação", "Item", "Prop. de acertos", "Discriminação", "Corr. ponto-bisserial", "Encaminhamento"],
             [
-                ["Simulado I", "8", "0,291", "0,063", "0,022", "Excluído da TRI; revisar gabarito"],
+                ["Simulado I", "8", "0,291", "0,063", "0,022", "Mantido na TRI; interpretar com ressalva"],
                 ["Simulado II", "14", "0,253", "0,090", "0,034", "Excluído da TRI; revisar gabarito"],
             ],
             [1250, 700, 1450, 1300, 1650, 3010],
@@ -651,7 +651,7 @@ def build_report(data, charts):
         set_paragraph_shading(p, RISK, "B3261E")
         r = p.add_run(
             "A baixa discriminação, acompanhada de correlação ponto-bisserial próxima de zero, indica que o acerto nesses itens quase não acompanhou o desempenho geral. "
-            "Esse padrão é compatível com gabarito problemático, ambiguidade ou funcionamento anômalo e justifica a revisão de conteúdo antes de qualquer reutilização."
+            "Esse padrão é compatível com gabarito problemático, ambiguidade ou funcionamento anômalo. O item 8 foi mantido na TRI como item fixado, mas seus resultados devem continuar acompanhados da ressalva técnica."
         )
         set_font(r, size=10.5, color="6B1D16")
     elif PROFILE == "3EM_LP":
@@ -839,9 +839,12 @@ def build_report(data, charts):
             if not subset.empty:
                 item_text = ", ".join(str(int(x)) for x in subset["Item"].tolist())
                 param_rows.append([label, signal, item_text])
+        n_b = int((items["bSAEB"] > 400).sum())
+        n_a = int((items["a"] < 0.60).sum())
+        n_c = int((items["c"] > 0.25).sum())
         param_summary.append(
-            f"{label}: {int((items['bSAEB'] > 400).sum())} itens com bSAEB acima de 400, "
-            f"{int((items['a'] < 0.60).sum())} com a abaixo de 0,60 e {int((items['c'] > 0.25).sum())} com c acima de 0,25"
+            f"{label}: {n_b} {'item' if n_b == 1 else 'itens'} com bSAEB acima de 400, "
+            f"{n_a} {'item' if n_a == 1 else 'itens'} com a abaixo de 0,60 e {n_c} {'item' if n_c == 1 else 'itens'} com c acima de 0,25"
         )
     doc.add_paragraph(
         "; ".join(param_summary) + ". Esses valores são sinais diagnósticos e devem ser conferidos em conjunto com erros-padrão, ajuste e curvas do item."
@@ -895,7 +898,8 @@ def build_report(data, charts):
     doc.add_heading("6. Recomendações", level=1)
     if PROFILE == "3EM_MT":
         recommendations = [
-            "Revisar formalmente os gabaritos e o conteúdo dos itens 8 (Simulado I) e 14 (Simulado II), documentando a decisão final e impedindo reutilização até a conclusão da análise.",
+            "Manter documentada a ressalva do item 8 do Simulado I, que permaneceu na TRI como item fixado, e evitar interpretação isolada de seu desempenho.",
+            "Revisar formalmente o gabarito e o conteúdo do item 14 do Simulado II, que permaneceu excluído da TRI.",
             "Examinar os distratores desses dois itens por grupo de escore, verificando se uma alternativa não oficial foi progressivamente mais escolhida pelos estudantes de maior desempenho.",
             "Realizar leitura de ajuste TRI item a item, combinando infit/outfit, testes X²/G²/PV-Q1, curvas características e erros-padrão antes de aprovar itens com parâmetros extremos.",
             "Para comparar os simulados como medida de evolução, estabelecer base pareada de estudantes ou aplicar ponderação/controle de composição, além de confirmar a estabilidade dos itens de ligação.",
