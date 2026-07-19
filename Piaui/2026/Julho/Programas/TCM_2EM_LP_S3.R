@@ -2,7 +2,7 @@
 # 📦 1) PACOTES E PREPARO DO AMBIENTE
 # =======================================================
 
-#setwd('C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE')
+setwd('C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE')
 
 # Lista de pacotes necessários
 pacotes <- c(

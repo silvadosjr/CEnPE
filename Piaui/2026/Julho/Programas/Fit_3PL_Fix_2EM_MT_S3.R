@@ -23,19 +23,19 @@ invisible(lapply(pacotes, require, character.only = TRUE))
 
 # O pacote here() está fixando a raiz em:
 # C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE
-root_dir <- here::here()
+root_dir <- 'C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE'
 
 # Pasta principal do projeto Piauí 2026
-proj_dir <- file.path(root_dir, "Piaui", "2026")
+proj_dir <- file.path(root_dir, "Piaui", "2026","Julho")
 
 # Pasta dos dados
 dados_dir <- file.path(proj_dir, "Dados")
 
 # Pasta principal de saída dos resultados
-folder <- "ResultadosTRI_2EM_LP"
+folder <- "ResultadosTRI_2EM_MT"
 
 # Subpasta específica desta análise
-subfolder <- "Simulado_I"
+subfolder <- "Simulado_III"
 
 # Diretório final de saída
 result_dir <- file.path(proj_dir, folder, subfolder)
@@ -61,18 +61,18 @@ cat("==============================\n\n")
 # =======================================================
 
 # 2.1) Leitura do banco RDS já higienizado em etapa anterior
-base <- readRDS(file.path(dados_dir, "df_1ª_SIMULA_2ª_SÉRIE.RDS"))
+base <- readRDS(file.path(dados_dir, "df_3ª_SIMULA_2ª_SÉRIE.RDS"))
 colnames(base) <- trimws(colnames(base))
 
 # 2.2) Filtra disciplina Língua Portuguesa
 base <- base %>%
-  dplyr::filter(disciplina_descricao == "LÍNGUA PORTUGUESA")
+  dplyr::filter(disciplina_descricao == "MATEMÁTICA")
 
 # 2.3) Elimina itens/colunas específicas, se necessário
-suppressWarnings({
-  base <- base %>%
-    dplyr::select(-dplyr::any_of(c("rpa_021", "rp_021")))
-})
+# suppressWarnings({
+#   base <- base %>%
+#     dplyr::select(-dplyr::any_of(c("rpa_005", "rp_005"))) # Possível conflito de gabarito
+# })
 
 # 2.4) Extrai gabarito: colunas "rp_*", exceto "rpa_*"
 gabar_cols <- base %>%
@@ -123,20 +123,20 @@ num_alter <- 5
 # =======================================================
 
 
-InfoItens<-read_xlsx(file.path(dados_dir,'gabarito_2serie_lp 1ª SIMULA.xlsx'),sheet = 'LP-SimI')
+InfoItens<-read_xlsx(file.path(dados_dir,'gabarito_2serie_mt 3ª SIMULA.xlsx'),sheet = 'MT_2EM_S3')
 
 # Eliminando itens
 
-InfoItens<- InfoItens %>% filter(Item!='rpa_021')
+#InfoItens<- InfoItens %>% filter(Item!='rpa_005')
 
 
 # # # Constantes de Transformação
 #alfa = 55.8923279
 #beta = 249.964381
 
-v_item_conhecido <- !is.na(InfoItens$CONHECIDO)
+v_item_conhecido <- !is.na(InfoItens$Conhecido)
 # 
-InfoItens <- InfoItens %>% filter(CONHECIDO=='Prova25' | CONHECIDO=='SimII')
+InfoItens <- InfoItens %>% filter(Conhecido=='Sim')
 # 
 # InfoItens$JULHO <-paste0('rpa_0',InfoItens$JULHO)
 # 
@@ -482,7 +482,7 @@ dev.off()
 base$Theta<-rthetaML3PT
 
 
-write.xlsx(base,paste(result_dir,sep="/BaseRespTheta_2EM_LP_S1",".xlsx"),rowNames=T)
+write.xlsx(base,paste(result_dir,sep="/BaseRespTheta_2EM_MT_S3",".xlsx"),rowNames=T)
 
 
 ## Percentuais de alunos por classe dos tra?cos latentes na escala SAEB - TRI
@@ -510,7 +510,7 @@ freqTheta<-as.data.frame(freqTheta)
 
 apply(freqTheta,2,sum)
 
-write.xlsx(freqTheta,paste(result_dir,sep="/DistriAlunosClasseLP2serie_S1",".xlsx"),rowNames=T)
+write.xlsx(freqTheta,paste(result_dir,sep="/DistriAlunosClasseMT2serie_S3",".xlsx"),rowNames=T)
 
 freqTheta<-format(freqTheta,decimal.mark=",")
 
@@ -526,7 +526,7 @@ TabItens<-data.frame(Item=nomesitens,a=ea,b=eb,aSAEB=ea/sigma,bSAEB=sigma*eb+mu,
 
 #TabItens[,2:6]<-round(TabItens[,-c(1,7)],3)
 
-write.xlsx(TabItens,paste(result_dir,sep="/EstItens_2EM_LP_S1",".xlsx"),rowNames=F)
+write.xlsx(TabItens,paste(result_dir,sep="/EstItens_2EM_MT_S3",".xlsx"),rowNames=F)
 
 TabItens<-format(TabItens,decimal.mark=",")
 
@@ -550,7 +550,7 @@ names(med_resu)<-c("media","dp","cv(%)","min.","1o Q",
                    "curt.")
 
 
-write.xlsx(as.data.frame(med_resu),paste(result_dir,sep="/ResumoTheta_2EM_LP_S1",".xlsx"),rowNames=T)
+write.xlsx(as.data.frame(med_resu),paste(result_dir,sep="/ResumoTheta_2EM_MT_S3",".xlsx"),rowNames=T)
 
 round(med_resu,3)
 
@@ -565,7 +565,7 @@ EstPop<-round(rbind(EstPopThetaT,EstPopTheta),3)
 
 rownames(EstPop)<-c("SAEB","(0,1)")
 
-write.xlsx(rbind(EstPop),paste(result_dir,sep="/ResumoThetaIC_2EM_LP_S1",".xlsx"),rowNames=T)
+write.xlsx(rbind(EstPop),paste(result_dir,sep="/ResumoThetaIC_2EM_MT_S3",".xlsx"),rowNames=T)
 
 
 #xtable(EstPop)
