@@ -80,26 +80,26 @@ PROFILE_NOTES = {
     },
     "3EM_LP": {
         "lead": (
-            "Leitura principal. O Simulado III de Língua Portuguesa da 3ª série retirou o item 5 "
-            "da calibração TRI por possível conflito de gabarito e instabilidade no processo de estimação. "
-            "Os itens 7 e 8 também apresentaram sinais de funcionamento fraco, mas foram mantidos."
+            "Leitura principal. O Simulado III de Língua Portuguesa da 3ª série retirou os itens 5, 7 e 8 "
+            "da calibração TRI. Os três itens apresentaram discriminação e correlação ponto-bisserial baixas; "
+            "nos itens 5 e 8, há ainda sinais fortes de alternativa concorrente mais informativa que o gabarito."
         ),
         "diagnostic_items": [5, 7, 8],
         "status": {
             5: "Excluído da TRI; possível conflito de gabarito e instabilidade",
-            7: "Mantido na TRI; discriminação e ponto-bisserial baixos",
-            8: "Mantido na TRI; possível conflito de gabarito",
+            7: "Excluído da TRI; discriminação e ponto-bisserial baixos",
+            8: "Excluído da TRI; possível conflito de gabarito",
         },
         "narrative": (
             "O item 5 apresentou o sinal mais claro de conflito: o gabarito A reuniu 26,0% das escolhas "
             "e ponto-bisserial 0,095, enquanto o distrator B reuniu 42,0% e ponto-bisserial 0,305. "
             "O item 8 seguiu padrão semelhante, com gabarito E em 15,3% e distrator C em 38,0%, "
-            "também com maior associação ao desempenho. O item 7 foi mantido com ressalva por baixa "
-            "discriminação e baixa associação ponto-bisserial."
+            "também com maior associação ao desempenho. O item 7 não mostra uma alternativa concorrente tão dominante, "
+            "mas combina baixa discriminação e baixa associação ponto-bisserial, justificando sua retirada da calibração TRI na atualização."
         ),
         "recommendations": [
-            "Revisar formalmente o gabarito e o conteúdo dos itens 5 e 8.",
-            "Registrar ressalva técnica para os itens 7 e 8, que permaneceram na TRI apesar dos sinais TCM.",
+            "Revisar formalmente o gabarito e o conteúdo dos itens 5, 7 e 8 antes de qualquer reutilização.",
+            "Documentar a exclusão dos três itens da calibração TRI atualizada, distinguindo conflito provável de gabarito e funcionamento psicométrico fraco.",
             "Analisar as curvas características e os índices de ajuste antes de aprovar esses itens para banco.",
         ],
     },

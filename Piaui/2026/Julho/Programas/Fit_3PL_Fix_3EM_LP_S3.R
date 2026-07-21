@@ -71,7 +71,7 @@ base <- base %>%
 # 2.3) Elimina itens/colunas específicas, se necessário
 suppressWarnings({
   base <- base %>%
-    dplyr::select(-dplyr::any_of(c("rpa_005", "rp_005"))) # Possível conflito de gabarito, assim como 007 e 008. Estes últimos foram deixados. O item 005 levou à instabilidade no processo de estimação.
+    dplyr::select(-dplyr::any_of(c("rpa_005", "rp_005","rpa_007", "rp_007","rpa_008", "rp_008"))) # Possível conflito de gabarito, assim como 007 e 008. Estes últimos foram deixados. O item 005 levou à instabilidade no processo de estimação.
 })
 
 # 2.4) Extrai gabarito: colunas "rp_*", exceto "rpa_*"
@@ -127,7 +127,7 @@ InfoItens<-read_xlsx(file.path(dados_dir,'gabarito_3serie_lp 3ª SIMULA.xlsx'),s
 
 # Eliminando itens
 
-InfoItens<- InfoItens %>% filter(Item!='rpa_005')
+InfoItens<- InfoItens %>% filter(Item!='rpa_005' & Item!='rpa_007' & Item!='rpa_008')
 
 
 # # # Constantes de Transformação
