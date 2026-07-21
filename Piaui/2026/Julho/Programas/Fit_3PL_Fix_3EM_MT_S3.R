@@ -71,7 +71,7 @@ base <- base %>%
 # 2.3) Elimina itens/colunas específicas, se necessário
 suppressWarnings({
   base <- base %>%
-    dplyr::select(-dplyr::any_of(c("rpa_025", "rp_025","rpa_006", "rp_006"))) # Anulado
+    dplyr::select(-dplyr::any_of(c("rpa_025", "rp_025","rpa_006", "rp_006"))) # Anulado e possível conflito de gabarito
 })
 
 # 2.4) Extrai gabarito: colunas "rp_*", exceto "rpa_*"

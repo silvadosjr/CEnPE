@@ -5,6 +5,7 @@ import tempfile
 from datetime import date
 from pathlib import Path
 
+import numpy as np
 import pandas as pd
 from PIL import Image, ImageDraw, ImageFont
 from docx import Document
@@ -106,7 +107,8 @@ PROFILE_NOTES = {
         "lead": (
             "Leitura principal. O Simulado III de Matemática da 3ª série teve o item 25 anulado "
             "antes da leitura TCM/TRI e o item 6 retirado da calibração TRI por possível conflito de gabarito. "
-            "O restante da prova foi calibrado com 24 itens."
+            "O restante da prova foi calibrado com 24 itens. A distribuição das proficiências estimadas é bimodal, "
+            "com um segundo pico em faixa alta da escala, sugerindo a presença de um subgrupo de estudantes com maior proficiência."
         ),
         "diagnostic_items": [6],
         "status": {
@@ -123,6 +125,7 @@ PROFILE_NOTES = {
             "Manter documentada a anulação do item 25 e a exclusão TRI do item 6.",
             "Revisar formalmente o gabarito, a resolução e os distratores do item 6 antes de qualquer uso posterior.",
             "Interpretar os indicadores da aplicação com denominador de 25 itens na TCM e 24 na TRI.",
+            "Investigar a composição do subgrupo de maior proficiência sugerido pela bimodalidade, verificando escola, turma, histórico de participação e padrão de itens acertados.",
         ],
     },
 }
@@ -367,11 +370,52 @@ def read_profile(profile):
         "theta_ic": pd.read_excel(tri / f"ResumoThetaIC_{profile}_S3.xlsx", index_col=0),
         "items": pd.read_excel(tri / f"EstItens_{profile}_S3.xlsx"),
         "dist": pd.read_excel(tri / f"DistriAlunosClasse{discipline}{series}serie_S3.xlsx", index_col=0),
+        "base_theta": pd.read_excel(tri / f"BaseRespTheta_{profile}_S3.xlsx"),
         "choice": pd.read_excel(tcm / "mDificNRDF.xlsx", index_col=0),
         "disc_alt": pd.read_excel(tcm / "mDiscNRDF.xlsx", index_col=0),
         "pbis_alt": pd.read_excel(tcm / "mcpBisNRDF.xlsx", index_col=0),
     }
     return data
+
+
+def density_with_difficulty(data):
+    theta_values = data["base_theta"]["Theta"].dropna().astype(float).to_numpy()
+    difficulty = data["items"]["bSAEB"].dropna().astype(float).to_numpy()
+    n = len(theta_values)
+    sd = float(np.std(theta_values, ddof=1))
+    iqr = float(np.subtract(*np.percentile(theta_values, [75, 25])))
+    scale = min(sd, iqr / 1.349) if iqr > 0 else sd
+    bandwidth = 0.9 * scale * (n ** (-1 / 5))
+    x_min = min(float(theta_values.min()), float(difficulty.min())) - 8
+    x_max = max(float(theta_values.max()), float(difficulty.max())) + 8
+    grid = np.linspace(x_min, x_max, 650)
+    z = (grid[:, None] - theta_values[None, :]) / bandwidth
+    dens = np.exp(-0.5 * z * z).sum(axis=1) / (n * bandwidth * np.sqrt(2 * np.pi))
+
+    peaks = []
+    for idx in range(1, len(grid) - 1):
+        if dens[idx] > dens[idx - 1] and dens[idx] > dens[idx + 1]:
+            peaks.append((float(grid[idx]), float(dens[idx]), idx))
+    peaks = sorted(peaks, key=lambda item: item[1], reverse=True)
+    main_peaks = sorted(peaks[:2], key=lambda item: item[0])
+    if len(main_peaks) == 2:
+        left_idx, right_idx = main_peaks[0][2], main_peaks[1][2]
+        valley_idx = left_idx + int(np.argmin(dens[left_idx : right_idx + 1]))
+        valley = float(grid[valley_idx])
+    else:
+        valley = float(np.median(theta_values))
+
+    return {
+        "theta": theta_values,
+        "difficulty": difficulty,
+        "grid": grid,
+        "density": dens,
+        "bandwidth": float(bandwidth),
+        "peaks": main_peaks,
+        "valley": valley,
+        "pct_350": float(np.mean(theta_values >= 350) * 100),
+        "pct_325": float(np.mean(theta_values >= 325) * 100),
+    }
 
 
 def make_charts(profile, data, workdir):
@@ -454,7 +498,69 @@ def make_charts(profile, data, workdir):
         draw.text((cx - 35, bottom + 12), label, font=tiny, fill="#5F6B76")
     theta_chart = workdir / f"{profile}_theta_dist.png"
     img.save(theta_chart, dpi=(180, 180))
-    return tcm_chart, theta_chart
+
+    density_chart = None
+    if profile == "3EM_MT":
+        density = density_with_difficulty(data)
+        grid = density["grid"]
+        y = density["density"]
+        difficulty = data["items"]["bSAEB"].astype(float).to_numpy()
+        fixed = data["items"]["SAEB"].astype(str).eq("Sim").to_numpy()
+        img = Image.new("RGB", (1800, 820), "white")
+        draw = ImageDraw.Draw(img)
+        draw.text((60, 30), "Densidade das proficiências e dificuldade dos itens", font=font, fill="#203748")
+        left, right, top, bottom = 125, 1740, 105, 685
+        xmin, xmax = float(grid.min()), float(grid.max())
+        ymax = float(y.max()) * 1.08
+
+        def xpix(value):
+            return left + (float(value) - xmin) / (xmax - xmin) * (right - left)
+
+        def ypix(value):
+            return bottom - float(value) / ymax * (bottom - top)
+
+        for tick in range(225, 501, 25):
+            xx = xpix(tick)
+            draw.line((xx, top, xx, bottom), fill="#EEF1F4", width=1)
+            draw.text((xx - 18, bottom + 12), str(tick), font=tiny, fill="#5F6B76")
+        for frac in np.linspace(0, ymax, 5):
+            yy = ypix(frac)
+            draw.line((left, yy, right, yy), fill="#D9DEE5", width=1)
+        draw.line((left, top, left, bottom), fill="#5F6B76", width=2)
+        draw.line((left, bottom, right, bottom), fill="#5F6B76", width=2)
+
+        points = [(xpix(x), ypix(v)) for x, v in zip(grid, y)]
+        draw.line(points, fill="#B3261E", width=5)
+
+        for peak_x, peak_y, _ in density["peaks"]:
+            xx = xpix(peak_x)
+            yy = ypix(peak_y)
+            draw.line((xx, yy, xx, bottom), fill="#D9822B", width=2)
+            draw.ellipse((xx - 6, yy - 6, xx + 6, yy + 6), fill="#D9822B")
+            draw.text((xx + 8, yy - 26), f"pico {fmt_num(peak_x, 0)}", font=small, fill="#7A4A00")
+
+        valley_x = xpix(density["valley"])
+        for yy in range(top, bottom, 12):
+            draw.line((valley_x, yy, valley_x, yy + 6), fill="#607D8B", width=2)
+        draw.text((valley_x + 8, top + 8), f"vale ~{fmt_num(density['valley'], 0)}", font=small, fill="#40515C")
+
+        for value, is_fixed in zip(difficulty, fixed):
+            xx = xpix(value)
+            marker_y = bottom + 52 if is_fixed else bottom + 31
+            fill = "#2E7D32" if is_fixed else "#222222"
+            if is_fixed:
+                draw.polygon([(xx, marker_y - 8), (xx - 8, marker_y + 8), (xx + 8, marker_y + 8)], fill=fill)
+            else:
+                draw.ellipse((xx - 5, marker_y - 5, xx + 5, marker_y + 5), fill=fill)
+
+        draw.text((left, bottom + 75), "Escala SAEB", font=small, fill="#203748")
+        draw.text((left + 210, bottom + 75), "● itens estimados", font=small, fill="#222222")
+        draw.text((left + 420, bottom + 75), "▲ itens fixados", font=small, fill="#2E7D32")
+        draw.text((left + 620, bottom + 75), "Linha vermelha: densidade estimada das proficiências EAP", font=small, fill="#B3261E")
+        density_chart = workdir / f"{profile}_theta_density_difficulty.png"
+        img.save(density_chart, dpi=(180, 180))
+
+    return tcm_chart, theta_chart, density_chart
 
 
 def discipline_name(profile):
@@ -468,7 +574,7 @@ def series_ordinal(profile):
 def build_report(profile, data, charts):
     doc = Document()
     configure_document(doc, profile)
-    tcm_chart, theta_chart = charts
+    tcm_chart, theta_chart, density_chart = charts
     notes = PROFILE_NOTES[profile]
     series = int(profile[0])
     discipline = profile.split("_")[1]
@@ -661,6 +767,37 @@ def build_report(profile, data, charts):
         f"e desvio-padrão EAP de {fmt_num(theta.loc['dp'], 1)}. A proporção de estudantes na faixa de 350 pontos ou mais foi "
         f"{fmt_num(dist.iloc[-1]['Percentual'], 1)}%."
     )
+
+    if profile == "3EM_MT" and density_chart is not None:
+        density_info = density_with_difficulty(data)
+        peaks = density_info["peaks"]
+        if len(peaks) >= 2:
+            peak_text = f"{fmt_num(peaks[0][0], 0)} e {fmt_num(peaks[1][0], 0)} pontos"
+        else:
+            peak_text = "duas regiões da escala"
+        doc.add_heading("Densidade estimada e dificuldade dos itens", level=2)
+        add_picture_with_alt(
+            doc,
+            density_chart,
+            Inches(6.35),
+            "Curva de densidade das proficiências EAP da 3ª série em Matemática no Simulado III, com pontos de dificuldade bSAEB dos itens sobrepostos no eixo da escala.",
+        )
+        add_caption(doc, "Figura 3. Densidade estimada das proficiências e parâmetros de dificuldade dos itens.")
+        add_source(doc, "BaseRespTheta_3EM_MT_S3.xlsx e EstItens_3EM_MT_S3.xlsx; procedimento espelhado no script Fit_3PL_Fix_3EM_MT_S3.R.")
+        p = doc.add_paragraph()
+        set_paragraph_shading(p, CAUTION, "D9822B")
+        run = p.add_run(
+            f"A densidade estimada das proficiências individuais EAP apresenta dois modos, próximos de {peak_text}, "
+            f"com vale intermediário em torno de {fmt_num(density_info['valley'], 0)} pontos. Esse padrão sugere heterogeneidade substantiva na população avaliada: "
+            f"além do grupo principal em faixa intermediária, há um subgrupo de maior proficiência, consistente com os {fmt_num(density_info['pct_350'], 1)}% "
+            "de estudantes posicionados em 350 pontos ou mais."
+        )
+        set_font(run, size=10.5, color="6B4E00", bold=True)
+        doc.add_paragraph(
+            "A sobreposição dos parâmetros de dificuldade dos itens mostra que vários itens calibrados se concentram acima de 350 pontos, "
+            "região onde se localiza o segundo modo. Assim, a forma do Simulado III parece fornecer informação útil para diferenciar estudantes "
+            "de maior proficiência, embora a interpretação desse subgrupo deva ser confirmada com análises de composição escolar, participação e padrão de respostas."
+        )
 
     doc.add_heading("Parâmetros dos itens", level=2)
     param_rows = []
