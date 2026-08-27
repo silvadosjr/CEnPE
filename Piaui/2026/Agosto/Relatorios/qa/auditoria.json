@@ -1,0 +1,66 @@
+{
+  "reference_sha256": "cc6607b27e98713c7b983718db1d191b6e4a75b66e3a1c4988b558868668608a",
+  "reference_parts": {
+    "[Content_Types].xml": "ecbe3f7dfd70530319fed457805e79a3df0cc177119a7d97bacbb25f516c7adb",
+    "_rels/.rels": "a9ae57efe9186f07d48303bcac5d54c7e359bf3f503939c03ad2954e5c59a5c4",
+    "docProps/core.xml": "d14be8284e406d14dc2a576b19f15e7f637b955f9e27a3d9ed871ec99606f7ba",
+    "docProps/app.xml": "be664981c3141cddfc59362beb287ebf20d0773660e2dd6faac5968a5930a081",
+    "word/document.xml": "b479c5eda544fafb5c500dad271b2c46233bf075394047a3a17733701a477c04",
+    "word/_rels/document.xml.rels": "1cd6cb9b4f34c97bd4f3d39f33ca3831df5ebbcc12bb256184003184d5575459",
+    "word/styles.xml": "290fdaab9b99f80125f458fafdba1c60e0fde6fcd88bf6dc576e907fa5704175",
+    "word/stylesWithEffects.xml": "463ae0928cf0d84775dbf8cf18d6c3029f6707c81bf590f6d6dd8757a5e93f15",
+    "word/settings.xml": "51a0d348fe85965c66e4748a03c3c0d055d78455514f03cb121c334af7d73689",
+    "word/webSettings.xml": "349d36de7434d09f86987ff671d8814964a0588c1e630c06e562cda7e75e9f95",
+    "word/fontTable.xml": "79385fb7f60247507ecaffc292e9ebd52ea0657b8634f629ba6fccc54011d6bb",
+    "word/theme/theme1.xml": "e3a8ab7db9ca7afca56f5f2820a56e8b660016c647773555b060b0a02ac76941",
+    "customXml/item1.xml": "a86086ffc5d8e83ebd6c71a55d1d2efaa31b137977f5f3a752366e1023612144",
+    "customXml/_rels/item1.xml.rels": "1ca6c9a64edcebe24ee703a54403611b322d96da33371779e742d2d3f7ed7a6c",
+    "customXml/itemProps1.xml": "c542307b13ec29a8b546217bb37936ab4822e044b265d2952985ec3d6afed24e",
+    "word/numbering.xml": "70976f19cbcd896e51890859fe6ecb3467a5a7ad0c040160fedc5a1993cb09ce",
+    "word/header1.xml": "620bcecef6ab480b33a3695d025bbad406d02ea50227b51f79ffc5943df1a233",
+    "word/footer1.xml": "538e4af63db3b8d07bd56470a81ea74850a6981b122740ca1b46ecff6d70099b",
+    "word/media/image1.png": "b16e0eb23606c9b4b60c00ddb9681ec822580e414842ab388f82ec0561d9e7cc",
+    "word/media/image2.png": "8fcf62fbd56141af6e0a1f266a57874bb8020ea2077293a4749fdd9cd025d5ef",
+    "docProps/thumbnail.jpeg": "96367138dc44ce09bf2c8f0f8e49348a1478d2c5c0af69bbc2bbc38b63cdcead"
+  },
+  "profiles": {
+    "2EM_LP": {
+      "N": 30546,
+      "TCM": 26,
+      "TRI": 26,
+      "excluded_TRI": [],
+      "mean_score": 12.485333595233419,
+      "mean_theta": 224.42936134538283,
+      "passed": true
+    },
+    "2EM_MT": {
+      "N": 30546,
+      "TCM": 26,
+      "TRI": 25,
+      "excluded_TRI": [
+        24
+      ],
+      "mean_score": 8.595724481110457,
+      "mean_theta": 310.5173931918767,
+      "passed": true
+    },
+    "3EM_LP": {
+      "N": 29728,
+      "TCM": 26,
+      "TRI": 26,
+      "excluded_TRI": [],
+      "mean_score": 13.200518030139936,
+      "mean_theta": 232.0908508021927,
+      "passed": true
+    },
+    "3EM_MT": {
+      "N": 29728,
+      "TCM": 25,
+      "TRI": 25,
+      "excluded_TRI": [],
+      "mean_score": 8.386907965554359,
+      "mean_theta": 309.8868881915435,
+      "passed": true
+    }
+  }
+}
