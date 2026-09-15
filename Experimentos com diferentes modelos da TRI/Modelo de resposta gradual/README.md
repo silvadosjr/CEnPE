@@ -13,6 +13,34 @@
 
 Espera-se que as estimativas acompanhem os valores verdadeiros, com erro amostral. O EAP tende a aproximar estimativas extremas do centro da distribuição. Uma única simulação não estabelece viés, cobertura ou desempenho geral do estimador.
 
+## Breve descrição teórica
+
+O **modelo de resposta gradual** (MRG), proposto por [Samejima (1969)](https://doi.org/10.1007/BF03372160), é um modelo da Teoria de Resposta ao Item para categorias ordenadas, como respostas em uma escala Likert. Nesta aplicação, cada resposta depende de um único traço latente e as respostas aos diferentes itens são consideradas independentes quando esse traço é conhecido (independência local).
+
+Para a pessoa $i$, o item $j$ e as categorias $Y_{ij} \in \{0,1,2,3,4\}$, a versão logística utilizada define:
+
+$$
+P(Y_{ij} \geq k \mid \theta_i)
+= \frac{1}{1 + \exp[-a_j(\theta_i-b_{jk})]},
+\qquad k=1,\ldots,4.
+$$
+
+Aqui, $\theta_i$ é o traço latente, $a_j>0$ é a discriminação do item (valores maiores tornam a transição entre categorias mais acentuada) e $b_{j1}<\cdots<b_{j4}$ são os limiares. Quando $\theta_i=b_{jk}$, a probabilidade de responder na categoria $k$ ou em uma superior é 0,5. A probabilidade de uma categoria específica é obtida por diferença:
+
+$$
+P(Y_{ij}=k\mid\theta_i)
+=P(Y_{ij}\geq k\mid\theta_i)-P(Y_{ij}\geq k+1\mid\theta_i),
+$$
+
+com $P(Y_{ij}\geq0\mid\theta_i)=1$ e $P(Y_{ij}\geq5\mid\theta_i)=0$.
+
+No script, o pacote [`mirt` (Chalmers, 2012)](https://doi.org/10.18637/jss.v048.i06) usa interceptos $d_{jk}=-a_jb_{jk}$. O ajuste fixa a distribuição latente em $N(0,1)$ para definir a escala e utiliza EM com prior $\log(a_j)\sim N(-0{,}2058759;\,0{,}6^2)$. Portanto, os parâmetros dos itens são estimados por maximização da verossimilhança marginal acrescida da log-prior (MAP), e os traços individuais por EAP, a média posterior de $\theta_i$ condicionada às respostas e aos parâmetros estimados.
+
+### Referências
+
+- Samejima, F. (1969). *Estimation of latent ability using a response pattern of graded scores*. Psychometrika, 34(S1), 1–97. [https://doi.org/10.1007/BF03372160](https://doi.org/10.1007/BF03372160).
+- Chalmers, R. P. (2012). *mirt: A multidimensional item response theory package for the R environment*. Journal of Statistical Software, 48(6), 1–29. [https://doi.org/10.18637/jss.v048.i06](https://doi.org/10.18637/jss.v048.i06).
+
 ## Caminhos e execução
 
 A entrada é procurada junto ao script. As saídas são gravadas em `resultados/MRG`, dentro desta pasta, criada automaticamente. Os caminhos usam `file.path()` e não dependem do nome do usuário. Execute o arquivo inteiro para permitir a identificação de sua localização.
