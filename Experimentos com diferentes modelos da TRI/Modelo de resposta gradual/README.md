@@ -1,0 +1,79 @@
+# Modelo de resposta gradual — guia de execução
+
+## O que o script faz
+
+`SimUUMRG.R` executa uma simulação de um único grupo com uma dimensão latente. Não analisa respostas reais e não faz várias replicações de Monte Carlo.
+
+1. Lê `modelo RG.ods`, primeira aba: 30 itens, com discriminação `a` e quatro limiares `b1` a `b4` por item. Linhas completamente vazias são descartadas.
+2. Gera 1.000 traços latentes normais e os padroniza. A semente é 4142.
+3. Simula respostas nas categorias 0 a 4 pelo MRG, usando os parâmetros da planilha. O escore total vai de 0 a 120. A máscara de observação está inteiramente preenchida: não há respostas ausentes neste experimento.
+4. Ajusta um MRG unidimensional por EM, com prior lognormal na discriminação, preservada do original. Estima parâmetros, erros-padrão e intervalos de Wald de 95%.
+5. Estima os traços latentes por EAP (média posterior), preservando seus erros-padrão, e compara estimativas com valores verdadeiros.
+6. Calcula diagnósticos dos itens, dos respondentes e da independência local.
+
+Espera-se que as estimativas acompanhem os valores verdadeiros, com erro amostral. O EAP tende a aproximar estimativas extremas do centro da distribuição. Uma única simulação não estabelece viés, cobertura ou desempenho geral do estimador.
+
+## Caminhos e execução
+
+A entrada é procurada junto ao script. As saídas são gravadas em `resultados/MRG`, dentro desta pasta, criada automaticamente. Os caminhos usam `file.path()` e não dependem do nome do usuário. Execute o arquivo inteiro para permitir a identificação de sua localização.
+
+No console do R, instale uma vez os pacotes ausentes:
+
+```r
+install.packages(c("mirt", "readODS", "plotrix"))
+```
+
+Depois execute:
+
+```r
+source("C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Experimentos com diferentes modelos da TRI/Modelo de resposta gradual/SimUUMRG.R", encoding = "UTF-8")
+```
+
+Também é possível usar `Rscript` com o caminho do arquivo. No início do script podem ser alterados `n`, `ncat`, `semente`, `arquivo_entrada` e `pasta_saida`. O número de categorias deve corresponder aos limiares disponíveis. Uma nova execução substitui arquivos de mesmo nome na pasta de saída; arquivos de execuções anteriores não são removidos automaticamente.
+
+## Saídas esperadas após execução completa
+
+### Gráficos: 16 arquivos PDF
+
+| Arquivo | Conteúdo |
+| --- | --- |
+| `TracosLatentesV.pdf` | Histograma e boxplot dos traços verdadeiros. |
+| `TracosLatentesVEscoreO.pdf` | Escore total observado versus traço verdadeiro. |
+| `ParItensEDisp.pdf` | Discriminação e limiares: verdadeiro versus estimado; diagonal indica igualdade. |
+| `ParItensEIC.pdf` | Estimativas e ICs de 95%; pontos vermelhos indicam valores verdadeiros. |
+| `TracosLatentesE.pdf` | Histogramas, boxplots, dispersão verdadeiro/EAP e QQ normal. |
+| `CCIPOE.pdf` | Curvas empíricas e previstas por categoria, com uma página por item (30 páginas). |
+| `S_X2item.pdf`, `X2item.pdf`, `G2item.pdf`, `PV_Q1item.pdf` | RMSEA associado a cada estatística de ajuste dos itens. |
+| `infititem.pdf`, `outfititem.pdf` | Infit e outfit por item. |
+| `RQEQMIL.pdf` | Distância entre proporções observadas e previstas para os 435 pares de itens. |
+| `outfitindiv.pdf`, `infitindiv.pdf`, `zhindiv.pdf` | Diagnósticos dos 1.000 respondentes. |
+
+As linhas de referência dos diagnósticos são guias visuais, não critérios universais de aprovação. A medida em `RQEQMIL.pdf` é `sqrt(sum((p_observada - p_esperada)^2))`: o original a chamava de RMSEA, mas ela é uma distância euclidiana entre proporções, sem divisão pelo número de células.
+
+### Tabelas e objetos: 10 CSVs, um RDS e um TXT
+
+| Arquivo | Conteúdo esperado |
+| --- | --- |
+| `respostas_simuladas.csv` | 1.000 linhas; identificador e respostas aos 30 itens. |
+| `parametros_itens.csv` | 150 linhas: item, parâmetro, valor verdadeiro, estimativa, erro-padrão e limites do IC. |
+| `tracos_latentes.csv` | 1.000 linhas: traço verdadeiro, EAP, erro-padrão e escore total. |
+| `ajuste_itens_S_X2.csv`, `ajuste_itens_X2.csv`, `ajuste_itens_G2.csv`, `ajuste_itens_PV_Q1.csv` | Estatísticas, graus de liberdade, RMSEA e p-valores por item. |
+| `ajuste_itens_infit_outfit.csv` | Infit/outfit e suas versões padronizadas por item. |
+| `independencia_local.csv` | 435 pares identificados e respectivas distâncias. |
+| `ajuste_individuos.csv` | Infit, outfit, versões padronizadas e Zh por respondente. |
+| `resultado_MRG.rds` | Lista com modelo ajustado, entrada, respostas, parâmetros, traços e semente; abrir com `readRDS()`. |
+| `sessionInfo.txt` | Versões do R e dos pacotes para rastreabilidade. |
+
+Os resultados centrais são salvos antes dos diagnósticos. Se uma etapa posterior falhar, a pasta poderá conter saídas parciais; a conclusão completa é indicada pela mensagem final no console.
+
+## Alterações e validação
+
+- Organizadas oito etapas e comentadas as decisões estatísticas.
+- Removidos caminhos antigos, limpeza do ambiente, dependências sem uso e trechos comentados referentes a outros modelos.
+- Corrigido o ajuste para usar a matriz com a máscara de ausências; o experimento padrão continua sem ausências. Para adaptar a dados incompletos, é necessário rever S_X2, que exige respostas completas.
+- Número de itens calculado a partir da entrada; extrações feitas por nomes de parâmetros e índices.
+- Semente fixada; verificação da entrada, categorias observadas e convergência; fechamento protegido dos PDFs.
+- Acrescentadas saídas CSV/RDS e registro de versões.
+- Sintaxe validada com R 4.5.0. A execução numérica completa não foi realizada: `mirt`, `readODS` e `plotrix` estão ausentes na biblioteca do R encontrado. Assim, convergência, gráficos e resultados numéricos ainda precisam ser verificados após instalar as dependências.
+
+As chamadas e os nomes das saídas foram conferidos na documentação oficial: [coeficientes](https://philchalmers.github.io/mirt/docs/reference/coef-method.html), [ajuste de itens](https://philchalmers.github.io/mirt/docs/reference/itemfit.html), [resíduos](https://philchalmers.github.io/mirt/docs/reference/residuals-method.html) e [ajuste de pessoas](https://philchalmers.github.io/mirt/docs/reference/personfit.html).
