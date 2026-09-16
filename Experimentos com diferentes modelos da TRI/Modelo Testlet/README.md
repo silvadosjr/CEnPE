@@ -105,7 +105,3 @@ O script salva resultados centrais antes dos diagnósticos. Se houver falha post
 - Variância do testlet extraída por `COV_22`; intervalos de `c` e da variância construídos em escalas que respeitam seus domínios.
 - Fechamento protegido dos PDFs; curvas condicionais rotuladas; S_X2 identificado explicitamente como p-valor.
 - Acrescentadas tabelas e objetos reutilizáveis, além dos PDFs do original. As tabelas de [itemfit](https://philchalmers.github.io/mirt/docs/reference/itemfit.html) preservam as estatísticas e os p-valores para inspeção.
-
-## Validação nesta revisão
-
-A sintaxe, a localização da entrada e funções de validação/transformação foram verificadas com R 4.5.0. A execução numérica completa está pendente: `mirt` e `readODS` não estão instalados na biblioteca do R encontrado. Portanto, ainda não foram verificados convergência, resultados numéricos e renderização dos gráficos. Nenhuma saída numérica foi gerada nesta revisão.
