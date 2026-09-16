@@ -1,0 +1,504 @@
+# Para executar este programa basta executar o comando
+# "source" abaixo, com o devido diretório
+# source("C:\\Users\\cnaber\\Documentos\\Arquivos\\consultoria\\CENPE_UFC\\programas\\TRI\\simulacao\\um grupo\\multidimensional\\SimMUGLP3.r")
+
+# limpando a área de trabalho
+rm(list = ls(all.names = TRUE))
+
+# carregando os pacotes e funções necessários
+library(mirt)
+library(data.table)
+library(readODS)
+library(plotrix)
+library(psych)
+library(car)
+library(mvtnorm)
+library(msm)
+
+# mudar o diretório abaixo para indicar onde está o arquivo
+# "Aux Func IRT.r"
+source("C:\\Users\\cnaber\\Documentos\\Arquivos\\consultoria\\CENPE_UFC\\programas\\Aux Func IRT.r")
+
+# fixando a semente aleatória
+#set.seed(4142)
+
+## diretórios
+
+# carregar dados
+# mudar o diretório para carregar o arquivo com os 
+# parâmetros dos itens, veja abaixo
+arquivo.carregar <- "C:\\Users\\cnaber\\Documentos\\Arquivos\\consultoria\\CENPE_UFC\\dados\\"
+
+# escolher onde salvar resultados
+arquivo.salvar <- "C:\\Users\\cnaber\\Documentos\\Arquivos\\consultoria\\CENPE_UFC\\programas\\TRI\\simulacao\\um grupo\\multidimensional\\result\\"
+
+## dados de entrada
+# matriz com os parâmetros dos itens
+# somente para simulação
+mzeta<-read_ods(path=paste(arquivo.carregar,
+                           sep="","modelo 3P Multidimensional.ods"),
+                sheet = 1,
+                col_names = TRUE)
+n <- 2000 # número de respondentes
+nI <- nrow(mzeta) # número de itens
+D <- 2
+rho<-0.8
+mPsi <- matrix(c(1,rho,rho,1),2,2)
+#mPsi
+mtheta<- rmvnorm(n,mean=c(0,0),sigma=mPsi) # traços latentes
+mtheta <- matrix(scale(mtheta),n,D)
+#head(mtheta)
+covtheta <- cov(mtheta)
+mtheta <- t(t(chol(mPsi))%*%(t(solve(chol(covtheta)))%*%t(mtheta)))
+mtheta <- matrix(mtheta,n,D)
+apply(mtheta,2,mean)
+cov(mtheta)
+#
+# visualizando os traços latentes simulados
+# somente para simulação
+pdf(file=paste(arquivo.salvar,sep="","TracosLatentesV.pdf"))
+par(mfrow=c(1,2))
+for(d in 1:D)
+{
+hist(mtheta[,d],xlab="traço latente",ylab="densidade",main=paste("Dimensão : ",sep="",d),probability=TRUE)
+}
+par(mfrow=c(1,1))
+boxplot(mtheta,ylab="traço latente",xlab="Dimensão"
+        ,names=seq(1:D))
+plot(mtheta,pch=19,cex=1.1,cex.lab=1.1)
+dev.off()
+
+# Simulando respostas de um modelo logístico 3P
+# um único grupo
+#
+# somente para a simulação
+ma<- matrix(as.matrix(mzeta[,2:(D+1)]),nI,D) # discriminação
+vb<- c(mzeta[,(D+2)]$b) # dificuldade
+vd<- -matrix(vb,nI,1)#-va*vb # intercepto
+vc<- matrix(mzeta[,(D+3)]$c,nI,1) # acerto casual
+#
+# duas formas, ela pode ser indicada a parte  
+# (0: se não há resposta e 1: se há resposta)
+# ou indicando na matrix mY (acima) a não resposta
+# com algumas letra ou número diferente (do gabarito
+# ou do 0/1)
+mV<-matrix(1,n,nI) # indicação de não resposta
+#
+# matriz de respostas (NA indica não resposta)
+# esta tem de ser carregada, por exemplo
+# usando o comando "fread"  (prefiro esse, principalmente 
+# de a base de dados estiver em .csv), "read.table"
+# read_ods etc..., pode ser tanto uma matriz binária como uma
+# matriz com as alternativas (A,B,etc) + o gabarito ou
+# as respostas binários (0: incorreto e 1: correto)
+# posso fazer um exemplo
+mY <- simdata(a=ma,d=vd,N=n,guess=vc,
+              Theta=cbind(mtheta),itemtype='3PL')
+head(mY)
+#
+vescore <- apply(mY*mV,1,sum)
+#
+pdf(file=paste(arquivo.salvar,sep="","TracosLatentesVEscoresO.pdf"))
+par(mfrow=c(1,2))
+for(d in 1:D)
+{
+  plot(vescore,mtheta[,d],xlab="escore",ylab="traço latente",
+       main= paste("Dimensão : ",sep="",d),
+       pch=19,cex=1.1,cex.lab=1.2)  
+}
+dev.off()
+
+# Estimação dos parâmetros dos itens
+# Dimensão dos traços latente (F1: uma Dimensão)
+# PRIOR: prioris
+# 1-30 (indica os itens para os quais devem ser
+# assumidos os fatores e prioris)
+model.prior <- mirt.model('F1 = 1-30,
+                           F2 = 2-30,
+                          PRIOR = (1-30, a1, norm,1,1),
+                          (2-30, a2, norm,1,1),
+                          (1-30, d, norm,0,3),
+                          (1-30, g, norm,-1,1)
+                          LBOUND = (1-30,a1,-0.5),
+                          (2-30,a2,-0.5)
+                          COV=F1*F2')
+#                          (1-30, g, norm,-1.274977,0.1854789)
+# Estimação dos par. dos itens
+# mY: base de dados (tem que colocar NA para não resposta)
+# model: Dimensão e prioris
+# itemtype: Modelo - 3PL
+# method: (Pseudo) Algoritmo EM
+# SE: calcular o erro-padrão
+resultML3P <- mirt(mY,model=model.prior,itemtype='3PL',
+                   SE=TRUE,method="EM",
+                   TOL = .0001)
+
+resultML3P
+coef(resultML3P)
+# vcovitem <- vcov(resultML3P)
+# 
+est.item<-res.item.par.dic.mirt(resultML3P,nI,D+2)
+mestitem<-est.item$mestitem
+mLIICitem<-est.item$mLIICitem
+mLSICitem<-est.item$mLSICitem
+
+# Resultados das estimativas dos parâmetros dos itens
+# extrair os parâmetros dos itens
+#resultML3Pparite <- as.data.frame(coef(resultML3P,
+#                                       printSE=T,simply=T))
+#
+# índices úteis para salvar os resultados
+# relativos aos parâmetros dos itens
+# necessários para gerar alguns gráficos
+# abaixo
+#indu <- (D+3)*seq(1,nI,1)
+#indc <- indu-1
+#indb<- indc-1
+#inda <- indb-1
+#
+# dificuldade
+#ed <- as.numeric(resultML3Pparite[1,indb]) # estimativa
+#epd <- as.numeric(resultML3Pparite[2,indb]) # erro-padrão
+# discriminação
+#ea <- as.numeric(resultML3Pparite[1,inda]) # estimativa
+#epa <- as.numeric(resultML3Pparite[2,inda]) # erro-padrão
+# acerto casual
+#ec <-as.numeric(resultML3Pparite[1,indc]) # estimativa
+#epc <- as.numeric(resultML3Pparite[2,indc]) # erro-padrão
+#
+# dificuldade
+ed <- mestitem[,D+1]
+liicd <- mLIICitem[,D+1]
+lsicd <- mLSICitem[,D+1]
+# discriminação
+ema <- mestitem[,1:D]
+liica <- mLIICitem[,1:D]
+lsica <- mLSICitem[,1:D]
+# acerto casual
+ec <- mestitem[,D+2]
+liicc <- mLIICitem[,D+2]
+lsicc <- mLSICitem[,D+2]
+# correlação
+mecor<-coef(resultML3P)$GroupPars
+ecor<-mecor[1,4]
+liiccor<-mecor[2,4]
+lsiccor<-mecor[3,4]
+pdf(file=paste(arquivo.salvar,sep="","ParPopEIC.pdf"))
+par(mfrow=c(1,1))
+plotCI(ecor,li=liiccor,ui=lsiccor,
+       pch=19,cex=1.2,ylim=c(-1,1))
+lines(mPsi[1,2],col="red",pch=17,cex=1.2,
+      type="p")
+dev.off()
+
+# gráficos de dispersão: valores verdadeiros x estimativas
+# só no caso de Estimação
+pdf(file=paste(arquivo.salvar,sep="","ParItensEDisp.pdf"))
+par(mfrow=c(2,2))
+for (i in 1:D){
+plot(ma[,i],ema[,i],xlab="valor verdadeiro",ylab="estimativa",main="discriminação",pch=19,cex=1.2,cex.main=1.2,cex.lab=1.2)
+abline(0,1,lwd=2,col="blue")
+}
+plot(vd,ed,xlab="valor verdadeiro",ylab="estimativa",main="dificuldade",pch=19,cex=1.2,cex.main=1.2,cex.lab=1.2)
+abline(0,1,lwd=2,col="blue")
+plot(vc,ec,xlab="valor verdadeiro",ylab="estimativa",main="acerto casual",pch=19,cex=1.2,cex.main=1.2,cex.lab=1.2)
+abline(0,1,lwd=2,col="blue")
+dev.off()
+#
+# IC's, valores verdadeiros e estimativas pontuais
+# para os dado reais, nao teremos os valores verdadeiros
+# comando "abline", abaixo
+pdf(file=paste(arquivo.salvar,sep="","ParItensEIC.pdf"))
+par(mfrow=c(2,2))
+#ez=qnorm(0.975)
+for (i in 1:D){
+plotCI(ema[,i],ui=lsica[,i],li=liica[,i],pch=19,cex=1.2,
+       cex.lab=1.2,cex.main=1.2,
+       xlab="item",ylab="estimativa",main="discriminação")
+lines(ma[,i],type="p",pch=19,col="red",cex=1.2)
+abline(0.6,0,lwd=2,lty=2,col="gray")
+}
+plotCI(ed,ui=lsicd,li=liicd,pch=19,cex=1.2,
+       cex.lab=1.2,cex.main=1.2,
+       xlab="item",ylab="estimativa",main="dificuldade")
+lines(vd,type="p",pch=19,col="red",cex=1.2)
+abline(0,0,lwd=2,lty=2,col="gray")
+plotCI(ec,ui=lsicc,li=liicc,pch=19,cex=1.2,
+       cex.lab=1.2,cex.main=1.2,
+       xlab="item",ylab="estimativa",main="acerto casual")
+lines(vc,type="p",pch=19,col="red",cex=1.2)
+abline(0.25,0,lwd=2,lty=2,col="gray")
+dev.off()
+#
+## Resultados das estimativas dos traços latentes
+#
+# dispersão/histograma/boxplot 
+# entre estimativas e verdadeiros valores
+# resultML3P: objetivo com a estimativa dos parâmetros
+# dos itens
+# mehtod: EAP - Esperança a Posteriori
+# full.scores.SE: erros-padrão das estimativas
+# os comandos com "vtheta" abaixo, são apenas no caso de
+# valores simulados
+rthetaML3P <- fscores(resultML3P,method='EAP',
+                      full.scores.SE=TRUE)[,1:D]
+pdf(file=paste(arquivo.salvar,sep="","TracosLatentesEHist.pdf"))
+par(mfrow=c(1,2))
+for(i in 1:D){
+hist(mtheta[,i],probability=TRUE,xlab="traço latente",
+     ylab="densidade",main=paste("Dimensão : ",sep="",i),nclass=12,
+     cex.lab=1.2,cex.main=1.2,border="blue",col=NULL)
+hist(rthetaML3P[,i],probability=TRUE,
+     nclass=12,add=TRUE,border="green",col=NULL)
+}
+dev.off()
+pdf(file=paste(arquivo.salvar,sep="","TracosLatentesEBP.pdf"))
+par(mfrow=c(1,2))
+for(i in 1:D){
+boxplot(c(mtheta[,i],rthetaML3P[,i])~c(rep("verdadeiro",n),
+                               rep("EAP",n)),
+        cex=1.2,cex.main=1.2,cex.lab=1.2,
+        main=paste("Dimensão : ",sep="",i),xlab="tipo",ylab="valor")
+}
+dev.off()
+pdf(file=paste(arquivo.salvar,sep="","TracosLatentesEDisp.pdf"))
+par(mfrow=c(1,2))
+for(i in 1:D){
+  plot(mtheta[,i],rthetaML3P[,i],pch=19,xlab="verdadeiro",
+     ylab="estimativa",main=paste("Dimensão : ",sep="",i),
+     cex=1.2,cex.lab=1.2,cex.main=1.2)
+abline(0,1,lwd=2,col="blue")
+}
+dev.off()
+
+# qqplot (normalidade padrão)
+pdf(file=paste(arquivo.salvar,sep="","TracosLatentesEQQplot.pdf"))
+par(mfrow=c(1,2))
+for (i in 1:D)
+{
+qqPlot(c(scale(rthetaML3P[,i])),xlab="quantil N(0,1)",
+       dist="norm",mean=0,sd=1,col.lines="blue",grid="FALSE",
+         ylab="quantil do traço latente (padronizado)",
+         main=paste("Dimensão : ",sep="",i),
+         cex=1.2,pch=19)
+}
+dev.off()
+
+## Mecanismos de ajuste/estatísticas de comparação de modelos
+
+## Itens
+
+# gráficos de ajuste
+# proporções esperadas e observadas
+# itemplot(resultML3P,1,type="infoSE")
+# resultML3P: estimativa dos parâmetros dos itens
+# rthetaML3P: estimativa dos traços latentes
+
+#pdf(file=paste(arquivo.salvar,sep="","CCIPOE.pdf"))
+#for (i in 1:nI)
+#{
+#par(mfrow=c(1,1))
+#plot(itemfit(resultML3P,group.bins = 10,empirical.plot = i,
+#        Theta=matrix(rthetaML3P)))
+#print(itemfit(resultML3P, empirical.plot=i, 
+#              Theta=matrix(rthetaML3P)))
+#cat("\n") 
+#}
+#dev.off()
+#
+#itemfit(resultML3P)
+#
+# estatísticas de ajuste do modelo
+#
+# resultML3P: estimativa dos parâmetros dos itens
+pdf(file=paste(arquivo.salvar,sep="","S_X2item.pdf"))
+# S_X2
+par(mfrow=c(1,1))
+plot(itemfit(resultML3P,fit_stats="S_X2")[,4],ylim=c(0,1),
+     pch=19,xlab="item",ylab="RQEQM_S_X2")
+abline(h=0.05,lwd=2,lty=2,col="blue")
+abline(h=0.10,lwd=2,lty=3,col="blue")
+dev.off()
+#
+# X2
+# resultML3P: estimativa dos parâmetros dos itens
+#pdf(file=paste(arquivo.salvar,sep="","X2item.pdf"))
+#par(mfrow=c(1,1))
+#plot(itemfit(resultML3P,fit_stats="X2")p[,5],ylim=c(0,1),
+#     pch=19,xlab="item",ylab="X2")
+#abline(h=0.05,lwd=2,lty=2,col="blue")
+#abline(h=0.10,lwd=2,lty=3,col="blue")
+#dev.off()
+#
+# G2
+# resultML3P: estimativa dos parâmetros dos itens
+#pdf(file=paste(arquivo.salvar,sep="","G2item.pdf"))
+#par(mfrow=c(1,1))
+#plot(itemfit(resultML3P,fit_stats="G2")[,5],ylim=c(0,1),
+#     pch=19,xlab="item",ylab="G2")
+#abline(h=0.05,lwd=2,lty=2,col="blue")
+#abline(h=0.10,lwd=2,lty=3,col="blue")
+#dev.off()
+# 
+# PV_Q1
+# resultML3P: estimativa dos parâmetros dos itens
+#pdf(file=paste(arquivo.salvar,sep="","PV_Q1item.pdf"))
+#par(mfrow=c(1,1))
+#plot(itemfit(resultML3P,fit_stats="PV_Q1")[,5],ylim=c(0,1),
+#     pch=19,xlab="item",ylab="PV_Q1")
+#abline(h=0.05,lwd=2,lty=2,col="blue")
+#abline(h=0.10,lwd=2,lty=3,col="blue")
+#dev.off()
+#
+# Infit
+# resultML3P: estimativa dos parâmetros dos itens
+pdf(file=paste(arquivo.salvar,sep="","infititem.pdf"))
+par(mfrow=c(1,1))
+infout<-itemfit(resultML3P,fit_stats="infit")
+plot(infout[,4],
+     pch=19,xlab="item",ylab="infit",
+     ylim=c(min(0,infout[,4]),max(2.5,infout[,4])))
+abline(h=0.5,lwd=2,lty=3,col="blue")
+abline(h=1.5,lwd=2,lty=2,col="blue")
+abline(h=2,lwd=2,lty=3,col="blue")
+abline(h=1,lwd=2,lty=2,col="blue")
+dev.off()
+#
+# Outfit
+pdf(file=paste(arquivo.salvar,sep="","outfititem.pdf"))
+par(mfrow=c(1,1))
+plot(infout[,2],
+     pch=19,xlab="item",ylab="outfit",
+     ylim=c(min(0,infout[,2]),max(2.5,infout[,2])))
+abline(h=0.5,lwd=2,lty=3,col="blue")
+abline(h=1.5,lwd=2,lty=2,col="blue")
+abline(h=2,lwd=2,lty=3,col="blue")
+abline(h=1,lwd=2,lty=2,col="blue")
+dev.off()
+
+# Resíduos para verificação da independência local
+# resultML3P: estimativa dos parâmetros dos itens
+auxresML3P<-residuals(resultML3P,type="LD",table=TRUE)
+#
+auxnpar <- nI*(nI-1)/2
+RMSEA <- matrix(0,auxnpar)
+for (i in 1:auxnpar)
+{
+  rtable <- auxresML3P[[i]]  
+  rtableO <-rtable$Obs
+  rtableE <-rtable$Exp
+  ptableO <-rtableO/sum(rtableO)
+  ptableE <-rtableE/sum(rtableE)
+  RMSEA[i]<-sqrt(sum((ptableO-ptableE)^2))
+}
+#
+pdf(file=paste(arquivo.salvar,sep="","RQEQMIL.pdf"))
+par(mfrow=c(1,1))
+plot(RMSEA,xlab="pares de itens",
+     ylab="RQEQMIL",pch=19,
+     cex=1.2,cex.main=1.2,cex.lab=1.2,
+     ylim=c(0,1))
+abline(h=0.05,lwd=2,lty=2,col="green")
+abline(h=0.10,lwd=2,lty=2,col="green")
+dev.off()
+
+#pvalorX2 <- matrix(0,auxnpar)
+#pvalorG2 <-matrix(0,auxnpar)
+#for (i in 1:auxnpar)
+#{
+#  rtable <- auxresML3P[[i]]  
+#  rtableO <-rtable$Obs
+#  rtableE <-rtable$Exp
+#  X2 <- sum((rtableO-rtableE)^2/rtableE)
+#  G2 <- -2*sum(rtableO*log(rtableE/rtableO))
+#  pvalorX2[i]<- 1-pchisq(X2,df=1)
+#  pvalorG2[i] <- 1-pchisq(G2,df=1)  
+#}
+#pdf(file=paste(arquivo.salvar,sep="","ILX2item.pdf"))
+#par(mfrow=c(1,1))
+#plot(pvalorX2,xlab="pares de itens",
+#     ylab="p-valor (estatística X2)",pch=19,
+#     cex=1.2,cex.main=1.2,cex.lab=1.2)
+#abline(h=0.05,lwd=2,lty=2)
+#dev.off()
+#
+#pdf(file=paste(arquivo.salvar,sep="","ILG2item.pdf"))
+#par(mfrow=c(1,1))
+#plot(pvalorG2,xlab="pares de itens",
+#     ylab="p-valor (estatística G2)",pch=19,
+#     cex=1.2,cex.main=1.2,cex.lab=1.2)
+#abline(h=0.05,lwd=2,lty=2)
+#dev.off()
+#
+# Resíduos componente do desvio
+# essa função fora criada por mim
+# ea: estimativa dos parâmetros de discriminação
+# eb: estimativa dos parâmetros de dificuldade
+# ec: estimativa dos parâmetros de "acerto casual"
+# rthetaML3P: estimativa dos traços latentes
+
+# mP <- prob.tri.MRD(ea,eb,ec,rthetaML3P,1)$m.P
+#mP <- prob.tri.Mult.MRD(ema,-ed,ec,rthetaML3P,1)$m.P
+#mrescomdesv<-calc.res.dev.dic.IRT(mY,mV,mP,rthetaML3P,ema[,1],-ed,ec)
+#
+#pdf(file=paste(arquivo.salvar,sep="","RCDItem.pdf"))
+#for(i in 1:nI)
+#{
+#par(mfrow=c(1,1))
+#mrescomdesvitem <- mrescomdesv$mresdevitem
+#plot(mrescomdesvitem[is.na(mYmirt[,i])==FALSE,i],xlab="indivíduo",
+#     ylab="Resíduo componente do desvio",
+#     main=paste("item:",sep="",i),
+#     ylim=c(min(-3,mrescomdesvitem[is.na(mYmirt[,i])==FALSE,i]),
+#            max(3,mrescomdesvitem[is.na(mYmirt[,i])==FALSE,i])),pch=19)
+#abline(h=-2,lwd=2,lty=2,col="blue")
+#abline(h=0,lwd=2,lty=2,col="blue")
+#abline(h=2,lwd=2,lty=2,col="blue")
+#
+#plot(mP[is.na(mYmirt[,i])==FALSE,i],mrescomdesvitem[is.na(mYmirt[,i])==FALSE,i],xlab="indivíduo",
+#     ylab="Resíduo componente do desvio",
+#     main=paste("item:",sep="",i),
+#     ylim=c(min(-3,mrescomdesvitem[,i]),
+#            max(3,mrescomdesvitem[,i])),pch=19)
+#abline(h=-2,lwd=2,lty=2,col="blue")
+#abline(h=0,lwd=2,lty=2,col="blue")
+#abline(h=2,lwd=2,lty=2,col="blue")
+#}
+#dev.off()
+#
+#
+## indivíduos
+# resultML3P: estimativa dos parâmetros dos itens
+pdf(file=paste(arquivo.salvar,sep="","outfitindiv.pdf"))
+resindiv<-personfit(resultML3P)
+par(mfrow=c(1,1))
+plot(resindiv[,1],
+     pch=19,xlab="indivíduo",ylab="outfit",
+     ylim=c(min(0,resindiv[,1]),max(2.5,resindiv[,1])))
+abline(h=0.5,lwd=2,lty=3,col="blue")
+abline(h=1.5,lwd=2,lty=2,col="blue")
+abline(h=2,lwd=2,lty=3,col="blue")
+abline(h=1,lwd=2,lty=2,col="blue")
+dev.off()
+#
+pdf(file=paste(arquivo.salvar,sep="","infitindiv.pdf"))
+par(mfrow=c(1,1))
+plot(resindiv[,3],
+     pch=19,xlab="indivíduo",ylab="infit",
+     ylim=c(min(0,resindiv[,3]),max(2.5,resindiv[,3])))
+abline(h=0.5,lwd=2,lty=3,col="blue")
+abline(h=1.5,lwd=2,lty=2,col="blue")
+abline(h=2,lwd=2,lty=3,col="blue")
+abline(h=1,lwd=2,lty=2,col="blue")
+dev.off()
+#
+pdf(file=paste(arquivo.salvar,sep="","zhindiv.pdf"))
+par(mfrow=c(1,1))
+plot(resindiv[,5],
+     pch=19,xlab="indivíduo",ylab="zh",
+     ylim=c(min(-3,resindiv[,5]),max(3,resindiv[,5])))
+abline(h=-2,lwd=2,lty=2,col="blue")
+abline(h=0,lwd=2,lty=2,col="blue")
+abline(h=2,lwd=2,lty=2,col="blue")
+dev.off()
+
