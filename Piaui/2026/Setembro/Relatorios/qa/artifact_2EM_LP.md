@@ -1,0 +1,3 @@
+Referência: C:\Users\Usuário\OneDrive\Documentos\GitHub\CEnPE\Piaui\2026\Agosto\Relatorios\2EM_LP\Relatorio_Tecnico_2EM_LP_S4_TCM_TRI.docx
+SHA256: af685e7205076fc14b4c1f0ac947645106003908e78df20474539218e4532e0d
+Uma seção Letter 8,5 x 11 pol.; margens 1 pol.; cabeçalho e rodapé 0,492 pol. Corpo Calibri 11, entrelinha 1,10; H1 16 e H2 13 pt azuis. Tabelas com cabeçalho cinza, 9360 DXA, corpo 9,2 pt; rodapé PAGE. Preservados estilos, tema, numeração e rodapé. Slots editáveis: conteúdo S5, cabeçalho S5, gráficos, tabelas e apêndices. Figura adicional e análise bimodal em MT por solicitação explícita. Todas as páginas finais inspecionadas; apêndices confrontados integralmente com as planilhas.
