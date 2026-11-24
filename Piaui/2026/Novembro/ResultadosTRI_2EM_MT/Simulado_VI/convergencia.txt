@@ -1,0 +1,21 @@
+$iter
+[1] 394
+
+$converged
+[1] TRUE
+
+$cand.t.var
+NULL
+
+$condnum
+[1] 331220.2
+
+$secondordertest
+[1] TRUE
+
+$SEMconv
+[1] NA
+
+$aveAR
+NULL
+

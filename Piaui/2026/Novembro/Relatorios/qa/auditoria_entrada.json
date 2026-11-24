@@ -1,0 +1,123 @@
+{
+  "lp": {
+    "linhas": 33883,
+    "avaliados": 28727,
+    "itens": 26,
+    "ancoras": [1, 2, 3, 12, 19, 20],
+    "respostas": {
+      "-": 2392,
+      "*": 857,
+      "A": 163553,
+      "B": 177299,
+      "C": 169630,
+      "D": 124923,
+      "E": 108248
+    },
+    "gabarito_conferido": true,
+    "diferencas_parametros": [
+      {
+        "Item": 1,
+        "delta_a": -5.107e-15,
+        "delta_bSAEB": 0
+      },
+      {
+        "Item": 2,
+        "delta_a": -1.9984e-15,
+        "delta_bSAEB": -1.7053e-13
+      },
+      {
+        "Item": 3,
+        "delta_a": 1.9984e-15,
+        "delta_bSAEB": 0
+      },
+      {
+        "Item": 12,
+        "delta_a": -0.022,
+        "delta_bSAEB": 0.002
+      },
+      {
+        "Item": 19,
+        "delta_a": -0.019,
+        "delta_bSAEB": 0.019
+      },
+      {
+        "Item": 20,
+        "delta_a": 0.008,
+        "delta_bSAEB": -0.007
+      }
+    ]
+  },
+  "mt": {
+    "linhas": 33883,
+    "avaliados": 28727,
+    "itens": 26,
+    "ancoras": [6, 7, 8, 13, 14, 15, 16, 17, 18, 19, 20],
+    "respostas": {
+      "-": 3528,
+      "*": 1081,
+      "A": 140005,
+      "B": 191854,
+      "C": 173226,
+      "D": 133000,
+      "E": 104208
+    },
+    "gabarito_conferido": true,
+    "diferencas_parametros": [
+      {
+        "Item": 6,
+        "delta_a": 0,
+        "delta_bSAEB": 0
+      },
+      {
+        "Item": 7,
+        "delta_a": 0,
+        "delta_bSAEB": 5.1159e-13
+      },
+      {
+        "Item": 8,
+        "delta_a": 0,
+        "delta_bSAEB": 5.1159e-13
+      },
+      {
+        "Item": 13,
+        "delta_a": -1.9984e-15,
+        "delta_bSAEB": -5.1159e-13
+      },
+      {
+        "Item": 14,
+        "delta_a": 4.885e-15,
+        "delta_bSAEB": -5.1159e-13
+      },
+      {
+        "Item": 15,
+        "delta_a": -4.885e-15,
+        "delta_bSAEB": -5.6843e-14
+      },
+      {
+        "Item": 16,
+        "delta_a": 2.2204e-16,
+        "delta_bSAEB": 5.1159e-13
+      },
+      {
+        "Item": 17,
+        "delta_a": -4.885e-15,
+        "delta_bSAEB": 0
+      },
+      {
+        "Item": 18,
+        "delta_a": 0,
+        "delta_bSAEB": -0.02
+      },
+      {
+        "Item": 19,
+        "delta_a": 0.013,
+        "delta_bSAEB": 0.022
+      },
+      {
+        "Item": 20,
+        "delta_a": 0.017,
+        "delta_bSAEB": -0.007
+      }
+    ]
+  }
+}

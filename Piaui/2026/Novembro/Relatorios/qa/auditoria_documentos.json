@@ -1,0 +1,14 @@
+{
+  "2EM_LP": {
+    "paginas": 8,
+    "apendices_TCM_TRI_conferidos": true,
+    "template_preservado": true,
+    "sha256_docx": "a850bfe46c37d7bb7b094d252e4e5413b28c3a5144dc8f17bb615235d4b08d5c"
+  },
+  "2EM_MT": {
+    "paginas": 8,
+    "apendices_TCM_TRI_conferidos": true,
+    "template_preservado": true,
+    "sha256_docx": "d824d38766fe5bf077fe7bc80342550480758dd8b97d88d4efed71228dc86fe5"
+  }
+}

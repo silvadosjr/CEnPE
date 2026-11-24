@@ -1,0 +1,236 @@
+Carregando pacotes exigidos: mirt
+Carregando pacotes exigidos: stats4
+Carregando pacotes exigidos: lattice
+Carregando pacotes exigidos: data.table
+Carregando pacotes exigidos: car
+Carregando pacotes exigidos: carData
+Carregando pacotes exigidos: xtable
+Carregando pacotes exigidos: readODS
+Carregando pacotes exigidos: e1071
+Carregando pacotes exigidos: haven
+Carregando pacotes exigidos: foreign
+Carregando pacotes exigidos: dplyr
+
+Anexando pacote: 'dplyr'
+
+O seguinte objeto é mascarado por 'package:car':
+
+    recode
+
+Os seguintes objetos são mascarados por 'package:data.table':
+
+    between, first, last
+
+Os seguintes objetos são mascarados por 'package:stats':
+
+    filter, lag
+
+Os seguintes objetos são mascarados por 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Carregando pacotes exigidos: plyr
+------------------------------------------------------------------------------
+You have loaded plyr after dplyr - this is likely to cause problems.
+If you need functions from both plyr and dplyr, please load plyr first, then dplyr:
+library(plyr); library(dplyr)
+------------------------------------------------------------------------------
+
+Anexando pacote: 'plyr'
+
+Os seguintes objetos são mascarados por 'package:dplyr':
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+Carregando pacotes exigidos: openxlsx
+Carregando pacotes exigidos: plotrix
+Carregando pacotes exigidos: readxl
+Carregando pacotes exigidos: tidyr
+Carregando pacotes exigidos: readr
+Carregando pacotes exigidos: stringr
+Carregando pacotes exigidos: ggplot2
+Carregando pacotes exigidos: reshape2
+
+Anexando pacote: 'reshape2'
+
+O seguinte objeto é mascarado por 'package:tidyr':
+
+    smiths
+
+Os seguintes objetos são mascarados por 'package:data.table':
+
+    dcast, melt
+
+Carregando pacotes exigidos: here
+here() starts at C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE
+
+Anexando pacote: 'here'
+
+O seguinte objeto é mascarado por 'package:plyr':
+
+    here
+
+
+==============================
+Caminhos utilizados
+==============================
+Raiz do projeto:      C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE 
+Projeto Piauí 2026:   C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Piaui/2026/Novembro 
+Pasta dos dados:      C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Piaui/2026/Novembro/Dados 
+Pasta dos resultados: C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Piaui/2026/Novembro/ResultadosTRI_2EM_LP/Simulado_VI 
+==============================
+
+
+Iteration: 1, Log-Lik: -472826.484, Max-Change: 2.59018
+Iteration: 2, Log-Lik: -433709.992, Max-Change: 0.78717
+Iteration: 3, Log-Lik: -432069.748, Max-Change: 0.35071
+Iteration: 4, Log-Lik: -431251.691, Max-Change: 0.32912
+Iteration: 5, Log-Lik: -430637.628, Max-Change: 0.20597
+Iteration: 6, Log-Lik: -430161.295, Max-Change: 0.20395
+Iteration: 7, Log-Lik: -429781.493, Max-Change: 0.15555
+Iteration: 8, Log-Lik: -429489.769, Max-Change: 0.13525
+Iteration: 9, Log-Lik: -429259.611, Max-Change: 0.11468
+Iteration: 10, Log-Lik: -429080.186, Max-Change: 0.10282
+Iteration: 11, Log-Lik: -428938.093, Max-Change: 0.09472
+Iteration: 12, Log-Lik: -428826.011, Max-Change: 0.09294
+Iteration: 13, Log-Lik: -428737.911, Max-Change: 0.05486
+Iteration: 14, Log-Lik: -428668.677, Max-Change: 0.07535
+Iteration: 15, Log-Lik: -428613.600, Max-Change: 0.06859
+Iteration: 16, Log-Lik: -428570.415, Max-Change: 0.05742
+Iteration: 17, Log-Lik: -428536.183, Max-Change: 0.05749
+Iteration: 18, Log-Lik: -428508.939, Max-Change: 0.03905
+Iteration: 19, Log-Lik: -428487.438, Max-Change: 0.03624
+Iteration: 20, Log-Lik: -428470.360, Max-Change: 0.03410
+Iteration: 21, Log-Lik: -428456.758, Max-Change: 0.03313
+Iteration: 22, Log-Lik: -428445.887, Max-Change: 0.03255
+Iteration: 23, Log-Lik: -428437.200, Max-Change: 0.03489
+Iteration: 24, Log-Lik: -428430.199, Max-Change: 0.01692
+Iteration: 25, Log-Lik: -428424.687, Max-Change: 0.02770
+Iteration: 26, Log-Lik: -428420.180, Max-Change: 0.02983
+Iteration: 27, Log-Lik: -428416.523, Max-Change: 0.02610
+Iteration: 28, Log-Lik: -428410.841, Max-Change: 0.04658
+Iteration: 29, Log-Lik: -428404.368, Max-Change: 0.01447
+Iteration: 30, Log-Lik: -428403.631, Max-Change: 0.03383
+Iteration: 31, Log-Lik: -428402.842, Max-Change: 0.01186
+Iteration: 32, Log-Lik: -428402.364, Max-Change: 0.03940
+Iteration: 33, Log-Lik: -428401.987, Max-Change: 0.01049
+Iteration: 34, Log-Lik: -428401.800, Max-Change: 0.01425
+Iteration: 35, Log-Lik: -428401.583, Max-Change: 0.01192
+Iteration: 36, Log-Lik: -428401.382, Max-Change: 0.01097
+Iteration: 37, Log-Lik: -428401.142, Max-Change: 0.01121
+Iteration: 38, Log-Lik: -428400.654, Max-Change: 0.00256
+Iteration: 39, Log-Lik: -428400.578, Max-Change: 0.00153
+Iteration: 40, Log-Lik: -428400.524, Max-Change: 0.00176
+Iteration: 41, Log-Lik: -428400.472, Max-Change: 0.00116
+Iteration: 42, Log-Lik: -428400.440, Max-Change: 0.00090
+Iteration: 43, Log-Lik: -428400.407, Max-Change: 0.00207
+Iteration: 44, Log-Lik: -428400.350, Max-Change: 0.00069
+Iteration: 45, Log-Lik: -428400.332, Max-Change: 0.00050
+Iteration: 46, Log-Lik: -428400.317, Max-Change: 0.00101
+Iteration: 47, Log-Lik: -428400.291, Max-Change: 0.00037
+Iteration: 48, Log-Lik: -428400.282, Max-Change: 0.00028
+Iteration: 49, Log-Lik: -428400.274, Max-Change: 0.00064
+Iteration: 50, Log-Lik: -428400.258, Max-Change: 0.00021
+Iteration: 51, Log-Lik: -428400.253, Max-Change: 0.00015
+Iteration: 52, Log-Lik: -428400.249, Max-Change: 0.00027
+Iteration: 53, Log-Lik: -428400.242, Max-Change: 0.00011
+Iteration: 54, Log-Lik: -428400.240, Max-Change: 0.00008
+
+Calculating information matrix...
+Time difference of 16.38087 secs
+null device 
+          1 
+null device 
+          1 
+[1] 1208 1617
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+N de alunos  Percentual 
+  28727.000     100.001 
+% latex table generated in R 4.5.0 by xtable 1.8-4 package
+% Tue Nov 24 08:41:30 2026
+\begin{table}[ht]
+\centering
+\begin{tabular}{rll}
+  \hline
+ & N de alunos & Percentual \\ 
+  \hline
+[0,25) &    0 &  0,000 \\ 
+  [25,50) &    0 &  0,000 \\ 
+  [50,100) &    0 &  0,000 \\ 
+  [100,125) &  203 &  0,707 \\ 
+  [125,150) &  823 &  2,865 \\ 
+  [150,175) & 1890 &  6,579 \\ 
+  [175,200) & 2650 &  9,225 \\ 
+  [200,225) & 2566 &  8,932 \\ 
+  [225,250) & 2398 &  8,348 \\ 
+  [250,275) & 2750 &  9,573 \\ 
+  [275,300) & 3328 & 11,585 \\ 
+  [300,325) & 3779 & 13,155 \\ 
+  [325,350) & 3228 & 11,237 \\ 
+  [350,1e+03) & 5112 & 17,795 \\ 
+   \hline
+\end{tabular}
+\end{table}
+% latex table generated in R 4.5.0 by xtable 1.8-4 package
+% Tue Nov 24 08:41:30 2026
+\begin{table}[ht]
+\centering
+\begin{tabular}{rlllllll}
+  \hline
+ & Item & a & b & aSAEB & bSAEB & c & SAEB \\ 
+  \hline
+1 & 001 & 1,3508158 & -1,4408737 & 0,027016317 & 177,9563 & 0,10197520 & Sim \\ 
+  2 & 002 & 0,8306691 &  0,4153376 & 0,016613383 & 270,7669 & 0,08828029 & Sim \\ 
+  3 & 003 & 0,8916505 &  1,3582681 & 0,017833011 & 317,9134 & 0,24963073 & Sim \\ 
+  4 & 004 & 0,8333538 & -0,3605732 & 0,016667076 & 231,9713 & 0,01542928 & Nao \\ 
+  5 & 005 & 0,3531662 &  0,8848603 & 0,007063323 & 294,2430 & 0,03168080 & Nao \\ 
+  6 & 006 & 0,6220833 &  1,1983059 & 0,012441666 & 309,9153 & 0,09906606 & Nao \\ 
+  7 & 007 & 0,7189453 &  0,9979464 & 0,014378905 & 299,8973 & 0,08510612 & Nao \\ 
+  8 & 008 & 1,1727756 &  0,1326899 & 0,023455513 & 256,6345 & 0,09387508 & Nao \\ 
+  9 & 009 & 1,0908767 &  0,3116566 & 0,021817533 & 265,5828 & 0,04229526 & Nao \\ 
+  10 & 010 & 0,7546733 &  1,6073353 & 0,015093465 & 330,3668 & 0,07877530 & Nao \\ 
+  11 & 011 & 1,2652625 & -0,5172948 & 0,025305251 & 224,1353 & 0,03854340 & Nao \\ 
+  12 & 012 & 0,5500000 &  1,4110400 & 0,011000000 & 320,5520 & 0,03800000 & Sim \\ 
+  13 & 013 & 1,3176722 &  0,2094103 & 0,026353445 & 260,4705 & 0,12725166 & Nao \\ 
+  14 & 014 & 1,0889445 &  0,7674169 & 0,021778890 & 288,3708 & 0,13447679 & Nao \\ 
+  15 & 015 & 0,7170977 &  0,6293274 & 0,014341955 & 281,4664 & 0,03976668 & Nao \\ 
+  16 & 016 & 1,2149551 &  0,2324205 & 0,024299102 & 261,6210 & 0,08337332 & Nao \\ 
+  17 & 017 & 1,9618486 &  1,5698578 & 0,039236973 & 328,4929 & 0,17095221 & Nao \\ 
+  18 & 018 & 1,3738090 &  0,1395596 & 0,027476181 & 256,9780 & 0,16718168 & Nao \\ 
+  19 & 019 & 0,8000000 &  4,2413800 & 0,016000000 & 462,0690 & 0,20500000 & Sim \\ 
+  20 & 020 & 1,2000000 &  0,0608600 & 0,024000000 & 253,0430 & 0,15400000 & Sim \\ 
+  21 & 021 & 0,7788403 &  0,3771079 & 0,015576806 & 268,8554 & 0,02005259 & Nao \\ 
+  22 & 022 & 1,3510468 &  0,4518032 & 0,027020936 & 272,5902 & 0,16984638 & Nao \\ 
+  23 & 023 & 0,9555864 &  1,7898725 & 0,019111727 & 339,4936 & 0,11613929 & Nao \\ 
+  24 & 024 & 1,0532175 &  1,7697826 & 0,021064350 & 338,4891 & 0,16493484 & Nao \\ 
+  25 & 025 & 0,6101732 &  4,0138992 & 0,012203464 & 450,6950 & 0,17678075 & Nao \\ 
+  26 & 026 & 1,8386040 &  3,3487683 & 0,036772081 & 417,4384 & 0,19536655 & Nao \\ 
+   \hline
+\end{tabular}
+\end{table}
+  media      dp   cv(%)    min.    1o Q    med.     3oQ    max.      ca   curt. 
+277.493  74.947  27.009 108.546 215.193 283.712 333.215 467.263  -0.024   2.229 
+pdf 
+  2 
+pdf 
+  2 
+pdf 
+  2 
+pdf 
+  2 
+pdf 
+  2 
+pdf 
+  2 

@@ -1,0 +1,19 @@
+Inspeção final em 24/11/2026
+
+LP: oito páginas PNG abertas e inspecionadas, incluindo capa, síntese,
+gráficos, recomendações, referências e todos os apêndices.
+MT: oito páginas PNG abertas e inspecionadas, incluindo diagnóstico das
+alternativas do item 25 e tabela de parâmetros com estimativa extrema.
+Não foram observados cortes, sobreposições, caracteres ausentes ou tabelas
+truncadas. Legendas e fontes acompanham os gráficos. A barra negativa do
+item 25 foi representada proporcionalmente em eixo que inclui valores negativos.
+O espaçamento e as quebras de seções seguem os relatórios anteriores.
+
+As versões PDF finais foram copiadas das renderizações conferidas; as
+dezesseis páginas e todos os apêndices foram validados. A comparação dos
+estilos, tema, numeração, rodapé e geometria com Setembro passou.
+
+O renderizador retornou WinError 145 na limpeza de perfis temporários do
+LibreOffice, após gerar corretamente os PDF e todos os PNGs. Os arquivos
+resultantes foram abertos, extraídos e inspecionados; o erro de limpeza não
+foi tratado como evidência de sucesso da renderização.

@@ -1,0 +1,118 @@
+Carregando pacotes exigidos: mirt
+Carregando pacotes exigidos: stats4
+Carregando pacotes exigidos: lattice
+Carregando pacotes exigidos: data.table
+Carregando pacotes exigidos: car
+Carregando pacotes exigidos: carData
+Carregando pacotes exigidos: xtable
+Carregando pacotes exigidos: readODS
+Carregando pacotes exigidos: e1071
+Carregando pacotes exigidos: haven
+Carregando pacotes exigidos: foreign
+Carregando pacotes exigidos: dplyr
+
+Anexando pacote: 'dplyr'
+
+O seguinte objeto é mascarado por 'package:car':
+
+    recode
+
+Os seguintes objetos são mascarados por 'package:data.table':
+
+    between, first, last
+
+Os seguintes objetos são mascarados por 'package:stats':
+
+    filter, lag
+
+Os seguintes objetos são mascarados por 'package:base':
+
+    intersect, setdiff, setequal, union
+
+Carregando pacotes exigidos: plyr
+------------------------------------------------------------------------------
+You have loaded plyr after dplyr - this is likely to cause problems.
+If you need functions from both plyr and dplyr, please load plyr first, then dplyr:
+library(plyr); library(dplyr)
+------------------------------------------------------------------------------
+
+Anexando pacote: 'plyr'
+
+Os seguintes objetos são mascarados por 'package:dplyr':
+
+    arrange, count, desc, failwith, id, mutate, rename, summarise,
+    summarize
+
+Carregando pacotes exigidos: openxlsx
+Carregando pacotes exigidos: plotrix
+Carregando pacotes exigidos: readxl
+Carregando pacotes exigidos: tidyr
+Carregando pacotes exigidos: readr
+Carregando pacotes exigidos: stringr
+Carregando pacotes exigidos: ggplot2
+Carregando pacotes exigidos: reshape2
+
+Anexando pacote: 'reshape2'
+
+O seguinte objeto é mascarado por 'package:tidyr':
+
+    smiths
+
+Os seguintes objetos são mascarados por 'package:data.table':
+
+    dcast, melt
+
+Carregando pacotes exigidos: here
+here() starts at C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE
+
+Anexando pacote: 'here'
+
+O seguinte objeto é mascarado por 'package:plyr':
+
+    here
+
+
+==============================
+Caminhos utilizados
+==============================
+Raiz do projeto:      C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE 
+Projeto Piauí 2026:   C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Piaui/2026/Novembro 
+Pasta dos dados:      C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Piaui/2026/Novembro/Dados 
+Pasta dos resultados: C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Piaui/2026/Novembro/ResultadosTCM_2EM_MT/Simulado_VI 
+==============================
+
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+null device 
+          1 
+Arquivo PDF salvo: C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Piaui/2026/Novembro/ResultadosTCM_2EM_MT/Simulado_VI/graficos_proporcao_acertos.pdf 
+null device 
+          1 
+Arquivo PDF salvo: C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Piaui/2026/Novembro/ResultadosTCM_2EM_MT/Simulado_VI/graficos_percentuais_escolha.pdf 
+
+====================================================
+Análise TCT concluída.
+Arquivos salvos em:
+C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Piaui/2026/Novembro/ResultadosTCM_2EM_MT/Simulado_VI 
+====================================================
+
+Arquivos gerados:
+1) EscoresBrutos_Aluno.xlsx
+2) histbpescores.pdf
+3) ResumoEscores.xlsx
+4) dificdiscitems.pdf
+5) MedidasTCM_Item.xlsx
+6) corpbisbisitems.pdf
+7) PropAcertosGrupo.xlsx
+8) graficos_proporcao_acertos.pdf
+9) PropEscolhaAlternativaGrupo.xlsx
+10) graficos_percentuais_escolha.pdf
+11) mDificNRDF.xlsx
+12) mDiscNRDF.xlsx
+13) mcpBisNRDF.xlsx
+14) mcBisNRDF.xlsx
+====================================================
