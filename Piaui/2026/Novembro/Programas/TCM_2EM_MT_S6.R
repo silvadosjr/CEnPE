@@ -75,6 +75,9 @@ base <- base %>%
 #     dplyr::select(-dplyr::any_of(c("rpa_024", "rp_024")))
 # })
 
+# Exclusão do item 25 da TCM e da TRI por solicitação em 26/11/2026.
+base <- base %>% dplyr::select(-dplyr::all_of(c('rpa_025', 'rp_025')))
+
 # 2.4) Extrai gabarito: colunas "rp_*", exceto "rpa_*"
 gabar_cols <- base %>%
   dplyr::select(dplyr::starts_with("rp")) %>%

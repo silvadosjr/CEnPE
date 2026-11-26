@@ -82,408 +82,73 @@ Pasta dos resultados: C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Piaui/2
 ==============================
 
 
-Iteration: 1, Log-Lik: -512858.564, Max-Change: 2.13914
-Iteration: 2, Log-Lik: -453928.845, Max-Change: 0.89908
-Iteration: 3, Log-Lik: -445702.539, Max-Change: 0.95943
-Iteration: 4, Log-Lik: -440752.529, Max-Change: 0.46633
-Iteration: 5, Log-Lik: -438475.251, Max-Change: 0.38787
-Iteration: 6, Log-Lik: -437328.455, Max-Change: 0.44432
-Iteration: 7, Log-Lik: -436621.306, Max-Change: 0.26365
-Iteration: 8, Log-Lik: -436189.631, Max-Change: 0.24300
-Iteration: 9, Log-Lik: -435877.425, Max-Change: 0.25444
-Iteration: 10, Log-Lik: -435634.527, Max-Change: 0.19427
-Iteration: 11, Log-Lik: -435455.785, Max-Change: 0.17130
-Iteration: 12, Log-Lik: -435317.256, Max-Change: 0.15037
-Iteration: 13, Log-Lik: -435209.511, Max-Change: 0.12725
-Iteration: 14, Log-Lik: -435127.881, Max-Change: 0.12837
-Iteration: 15, Log-Lik: -435054.686, Max-Change: 0.14090
-Iteration: 16, Log-Lik: -434991.812, Max-Change: 0.09002
-Iteration: 17, Log-Lik: -434947.019, Max-Change: 0.15758
-Iteration: 18, Log-Lik: -434900.996, Max-Change: 0.08086
-Iteration: 19, Log-Lik: -434871.284, Max-Change: 0.10274
-Iteration: 20, Log-Lik: -434843.804, Max-Change: 0.08131
-Iteration: 21, Log-Lik: -434823.213, Max-Change: 0.08243
-Iteration: 22, Log-Lik: -434805.773, Max-Change: 0.11197
-Iteration: 23, Log-Lik: -434788.388, Max-Change: 0.05331
-Iteration: 24, Log-Lik: -434778.125, Max-Change: 0.07088
-Iteration: 25, Log-Lik: -434768.319, Max-Change: 0.06088
-Iteration: 26, Log-Lik: -434760.444, Max-Change: 0.05525
-Iteration: 27, Log-Lik: -434754.016, Max-Change: 0.05107
-Iteration: 28, Log-Lik: -434748.741, Max-Change: 0.05109
-Iteration: 29, Log-Lik: -434744.092, Max-Change: 0.04026
-Iteration: 30, Log-Lik: -434740.579, Max-Change: 0.04262
-Iteration: 31, Log-Lik: -434730.525, Max-Change: 0.04368
-Iteration: 32, Log-Lik: -434726.589, Max-Change: 0.02126
-Iteration: 33, Log-Lik: -434725.517, Max-Change: 0.05463
-Iteration: 34, Log-Lik: -434723.638, Max-Change: 0.04051
-Iteration: 35, Log-Lik: -434722.766, Max-Change: 0.07019
-Iteration: 36, Log-Lik: -434721.741, Max-Change: 0.05034
-Iteration: 37, Log-Lik: -434720.331, Max-Change: 0.04289
-Iteration: 38, Log-Lik: -434719.748, Max-Change: 0.07552
-Iteration: 39, Log-Lik: -434719.069, Max-Change: 0.07501
-Iteration: 40, Log-Lik: -434716.311, Max-Change: 0.02902
-Iteration: 41, Log-Lik: -434715.868, Max-Change: 0.08614
-Iteration: 42, Log-Lik: -434715.416, Max-Change: 0.06926
-Iteration: 43, Log-Lik: -434714.180, Max-Change: 0.06114
-Iteration: 44, Log-Lik: -434713.830, Max-Change: 0.04855
-Iteration: 45, Log-Lik: -434713.627, Max-Change: 0.09683
-Iteration: 46, Log-Lik: -434712.877, Max-Change: 0.05630
-Iteration: 47, Log-Lik: -434712.659, Max-Change: 0.07833
-Iteration: 48, Log-Lik: -434712.381, Max-Change: 0.07607
-Iteration: 49, Log-Lik: -434710.985, Max-Change: 0.04350
-Iteration: 50, Log-Lik: -434710.803, Max-Change: 0.04806
-Iteration: 51, Log-Lik: -434710.673, Max-Change: 0.04136
-Iteration: 52, Log-Lik: -434710.049, Max-Change: 0.04634
-Iteration: 53, Log-Lik: -434709.919, Max-Change: 0.03190
-Iteration: 54, Log-Lik: -434709.845, Max-Change: 0.03317
-Iteration: 55, Log-Lik: -434709.405, Max-Change: 0.10696
-Iteration: 56, Log-Lik: -434709.172, Max-Change: 0.01894
-Iteration: 57, Log-Lik: -434709.135, Max-Change: 0.02784
-Iteration: 58, Log-Lik: -434708.965, Max-Change: 0.06361
-Iteration: 59, Log-Lik: -434708.843, Max-Change: 0.01845
-Iteration: 60, Log-Lik: -434708.809, Max-Change: 0.02310
-Iteration: 61, Log-Lik: -434708.608, Max-Change: 0.31655
-Iteration: 62, Log-Lik: -434708.097, Max-Change: 0.02640
-Iteration: 63, Log-Lik: -434708.054, Max-Change: 0.01511
-Iteration: 64, Log-Lik: -434708.024, Max-Change: 0.01937
-Iteration: 65, Log-Lik: -434707.996, Max-Change: 0.01333
-Iteration: 66, Log-Lik: -434707.977, Max-Change: 0.01677
-Iteration: 67, Log-Lik: -434707.863, Max-Change: 0.01780
-Iteration: 68, Log-Lik: -434707.839, Max-Change: 0.01252
-Iteration: 69, Log-Lik: -434707.823, Max-Change: 0.01610
-Iteration: 70, Log-Lik: -434707.728, Max-Change: 0.01728
-Iteration: 71, Log-Lik: -434707.705, Max-Change: 0.01183
-Iteration: 72, Log-Lik: -434707.690, Max-Change: 0.01509
-Iteration: 73, Log-Lik: -434707.604, Max-Change: 0.01524
-Iteration: 74, Log-Lik: -434707.585, Max-Change: 0.01346
-Iteration: 75, Log-Lik: -434707.569, Max-Change: 0.01122
-Iteration: 76, Log-Lik: -434707.503, Max-Change: 0.01147
-Iteration: 77, Log-Lik: -434707.490, Max-Change: 0.01455
-Iteration: 78, Log-Lik: -434707.473, Max-Change: 0.01477
-Iteration: 79, Log-Lik: -434707.375, Max-Change: 0.01077
-Iteration: 80, Log-Lik: -434707.363, Max-Change: 0.01213
-Iteration: 81, Log-Lik: -434707.350, Max-Change: 0.01216
-Iteration: 82, Log-Lik: -434707.274, Max-Change: 0.01170
-Iteration: 83, Log-Lik: -434707.262, Max-Change: 0.01121
-Iteration: 84, Log-Lik: -434707.251, Max-Change: 0.01104
-Iteration: 85, Log-Lik: -434707.185, Max-Change: 0.01019
-Iteration: 86, Log-Lik: -434707.175, Max-Change: 0.00923
-Iteration: 87, Log-Lik: -434707.166, Max-Change: 0.00932
-Iteration: 88, Log-Lik: -434707.114, Max-Change: 0.00914
-Iteration: 89, Log-Lik: -434707.105, Max-Change: 0.00978
-Iteration: 90, Log-Lik: -434707.096, Max-Change: 0.00983
-Iteration: 91, Log-Lik: -434707.043, Max-Change: 0.00960
-Iteration: 92, Log-Lik: -434707.035, Max-Change: 0.00869
-Iteration: 93, Log-Lik: -434707.027, Max-Change: 0.00870
-Iteration: 94, Log-Lik: -434706.983, Max-Change: 0.00859
-Iteration: 95, Log-Lik: -434706.975, Max-Change: 0.00817
-Iteration: 96, Log-Lik: -434706.968, Max-Change: 0.00805
-Iteration: 97, Log-Lik: -434706.929, Max-Change: 0.00749
-Iteration: 98, Log-Lik: -434706.923, Max-Change: 0.00758
-Iteration: 99, Log-Lik: -434706.917, Max-Change: 0.00756
-Iteration: 100, Log-Lik: -434706.881, Max-Change: 0.00725
-Iteration: 101, Log-Lik: -434706.875, Max-Change: 0.00734
-Iteration: 102, Log-Lik: -434706.870, Max-Change: 0.00730
-Iteration: 103, Log-Lik: -434706.837, Max-Change: 0.00696
-Iteration: 104, Log-Lik: -434706.831, Max-Change: 0.00713
-Iteration: 105, Log-Lik: -434706.826, Max-Change: 0.00716
-Iteration: 106, Log-Lik: -434706.795, Max-Change: 0.00719
-Iteration: 107, Log-Lik: -434706.790, Max-Change: 0.00731
-Iteration: 108, Log-Lik: -434706.784, Max-Change: 0.00728
-Iteration: 109, Log-Lik: -434706.754, Max-Change: 0.00705
-Iteration: 110, Log-Lik: -434706.749, Max-Change: 0.00717
-Iteration: 111, Log-Lik: -434706.744, Max-Change: 0.00716
-Iteration: 112, Log-Lik: -434706.715, Max-Change: 0.00705
-Iteration: 113, Log-Lik: -434706.710, Max-Change: 0.00682
-Iteration: 114, Log-Lik: -434706.706, Max-Change: 0.00692
-Iteration: 115, Log-Lik: -434706.679, Max-Change: 0.00701
-Iteration: 116, Log-Lik: -434706.675, Max-Change: 0.00655
-Iteration: 117, Log-Lik: -434706.670, Max-Change: 0.00662
-Iteration: 118, Log-Lik: -434706.646, Max-Change: 0.00670
-Iteration: 119, Log-Lik: -434706.641, Max-Change: 0.00619
-Iteration: 120, Log-Lik: -434706.638, Max-Change: 0.00620
-Iteration: 121, Log-Lik: -434706.615, Max-Change: 0.00617
-Iteration: 122, Log-Lik: -434706.612, Max-Change: 0.00636
-Iteration: 123, Log-Lik: -434706.608, Max-Change: 0.00637
-Iteration: 124, Log-Lik: -434706.586, Max-Change: 0.00646
-Iteration: 125, Log-Lik: -434706.582, Max-Change: 0.00584
-Iteration: 126, Log-Lik: -434706.579, Max-Change: 0.00585
-Iteration: 127, Log-Lik: -434706.559, Max-Change: 0.00582
-Iteration: 128, Log-Lik: -434706.556, Max-Change: 0.00585
-Iteration: 129, Log-Lik: -434706.553, Max-Change: 0.00586
-Iteration: 130, Log-Lik: -434706.534, Max-Change: 0.00593
-Iteration: 131, Log-Lik: -434706.531, Max-Change: 0.00538
-Iteration: 132, Log-Lik: -434706.528, Max-Change: 0.00538
-Iteration: 133, Log-Lik: -434706.511, Max-Change: 0.00535
-Iteration: 134, Log-Lik: -434706.508, Max-Change: 0.00559
-Iteration: 135, Log-Lik: -434706.505, Max-Change: 0.00560
-Iteration: 136, Log-Lik: -434706.488, Max-Change: 0.00568
-Iteration: 137, Log-Lik: -434706.485, Max-Change: 0.00512
-Iteration: 138, Log-Lik: -434706.483, Max-Change: 0.00514
-Iteration: 139, Log-Lik: -434706.468, Max-Change: 0.00513
-Iteration: 140, Log-Lik: -434706.465, Max-Change: 0.00507
-Iteration: 141, Log-Lik: -434706.463, Max-Change: 0.00508
-Iteration: 142, Log-Lik: -434706.448, Max-Change: 0.00515
-Iteration: 143, Log-Lik: -434706.446, Max-Change: 0.00474
-Iteration: 144, Log-Lik: -434706.444, Max-Change: 0.00474
-Iteration: 145, Log-Lik: -434706.431, Max-Change: 0.00473
-Iteration: 146, Log-Lik: -434706.429, Max-Change: 0.00489
-Iteration: 147, Log-Lik: -434706.426, Max-Change: 0.00490
-Iteration: 148, Log-Lik: -434706.413, Max-Change: 0.00503
-Iteration: 149, Log-Lik: -434706.411, Max-Change: 0.00463
-Iteration: 150, Log-Lik: -434706.409, Max-Change: 0.00457
-Iteration: 151, Log-Lik: -434706.397, Max-Change: 0.00444
-Iteration: 152, Log-Lik: -434706.395, Max-Change: 0.00443
-Iteration: 153, Log-Lik: -434706.393, Max-Change: 0.00444
-Iteration: 154, Log-Lik: -434706.382, Max-Change: 0.00450
-Iteration: 155, Log-Lik: -434706.380, Max-Change: 0.00450
-Iteration: 156, Log-Lik: -434706.378, Max-Change: 0.00450
-Iteration: 157, Log-Lik: -434706.367, Max-Change: 0.00453
-Iteration: 158, Log-Lik: -434706.366, Max-Change: 0.00454
-Iteration: 159, Log-Lik: -434706.364, Max-Change: 0.00455
-Iteration: 160, Log-Lik: -434706.353, Max-Change: 0.00460
-Iteration: 161, Log-Lik: -434706.351, Max-Change: 0.00460
-Iteration: 162, Log-Lik: -434706.349, Max-Change: 0.00461
-Iteration: 163, Log-Lik: -434706.339, Max-Change: 0.00465
-Iteration: 164, Log-Lik: -434706.337, Max-Change: 0.00465
-Iteration: 165, Log-Lik: -434706.335, Max-Change: 0.00466
-Iteration: 166, Log-Lik: -434706.325, Max-Change: 0.00469
-Iteration: 167, Log-Lik: -434706.323, Max-Change: 0.00467
-Iteration: 168, Log-Lik: -434706.322, Max-Change: 0.13763
-Iteration: 169, Log-Lik: -434706.275, Max-Change: 0.42933
-Iteration: 170, Log-Lik: -434706.160, Max-Change: 0.35512
-Iteration: 171, Log-Lik: -434706.100, Max-Change: 0.00192
-Iteration: 172, Log-Lik: -434706.100, Max-Change: 0.00196
-Iteration: 173, Log-Lik: -434706.099, Max-Change: 0.00301
-Iteration: 174, Log-Lik: -434706.099, Max-Change: 0.00225
-Iteration: 175, Log-Lik: -434706.098, Max-Change: 0.00210
-Iteration: 176, Log-Lik: -434706.098, Max-Change: 0.00919
-Iteration: 177, Log-Lik: -434706.096, Max-Change: 0.00199
-Iteration: 178, Log-Lik: -434706.096, Max-Change: 0.00464
-Iteration: 179, Log-Lik: -434706.096, Max-Change: 0.00141
-Iteration: 180, Log-Lik: -434706.096, Max-Change: 0.00140
-Iteration: 181, Log-Lik: -434706.095, Max-Change: 0.00143
-Iteration: 182, Log-Lik: -434706.094, Max-Change: 0.00144
-Iteration: 183, Log-Lik: -434706.094, Max-Change: 0.00145
-Iteration: 184, Log-Lik: -434706.093, Max-Change: 0.00147
-Iteration: 185, Log-Lik: -434706.093, Max-Change: 0.00147
-Iteration: 186, Log-Lik: -434706.093, Max-Change: 0.00147
-Iteration: 187, Log-Lik: -434706.092, Max-Change: 0.00144
-Iteration: 188, Log-Lik: -434706.091, Max-Change: 0.00144
-Iteration: 189, Log-Lik: -434706.091, Max-Change: 0.00145
-Iteration: 190, Log-Lik: -434706.090, Max-Change: 0.00124
-Iteration: 191, Log-Lik: -434706.090, Max-Change: 0.00123
-Iteration: 192, Log-Lik: -434706.090, Max-Change: 0.00123
-Iteration: 193, Log-Lik: -434706.089, Max-Change: 0.00125
-Iteration: 194, Log-Lik: -434706.089, Max-Change: 0.00125
-Iteration: 195, Log-Lik: -434706.089, Max-Change: 0.00125
-Iteration: 196, Log-Lik: -434706.088, Max-Change: 0.00125
-Iteration: 197, Log-Lik: -434706.088, Max-Change: 0.00125
-Iteration: 198, Log-Lik: -434706.088, Max-Change: 0.00125
-Iteration: 199, Log-Lik: -434706.087, Max-Change: 0.00126
-Iteration: 200, Log-Lik: -434706.087, Max-Change: 0.00126
-Iteration: 201, Log-Lik: -434706.086, Max-Change: 0.00126
-Iteration: 202, Log-Lik: -434706.086, Max-Change: 0.00126
-Iteration: 203, Log-Lik: -434706.085, Max-Change: 0.00126
-Iteration: 204, Log-Lik: -434706.085, Max-Change: 0.00127
-Iteration: 205, Log-Lik: -434706.084, Max-Change: 0.00127
-Iteration: 206, Log-Lik: -434706.084, Max-Change: 0.00127
-Iteration: 207, Log-Lik: -434706.084, Max-Change: 0.00127
-Iteration: 208, Log-Lik: -434706.083, Max-Change: 0.00127
-Iteration: 209, Log-Lik: -434706.083, Max-Change: 0.00128
-Iteration: 210, Log-Lik: -434706.083, Max-Change: 0.00128
-Iteration: 211, Log-Lik: -434706.082, Max-Change: 0.00128
-Iteration: 212, Log-Lik: -434706.082, Max-Change: 0.00128
-Iteration: 213, Log-Lik: -434706.082, Max-Change: 0.00128
-Iteration: 214, Log-Lik: -434706.081, Max-Change: 0.00128
-Iteration: 215, Log-Lik: -434706.081, Max-Change: 0.00128
-Iteration: 216, Log-Lik: -434706.081, Max-Change: 0.00128
-Iteration: 217, Log-Lik: -434706.080, Max-Change: 0.00129
-Iteration: 218, Log-Lik: -434706.080, Max-Change: 0.00129
-Iteration: 219, Log-Lik: -434706.080, Max-Change: 0.00129
-Iteration: 220, Log-Lik: -434706.079, Max-Change: 0.00128
-Iteration: 221, Log-Lik: -434706.079, Max-Change: 0.00129
-Iteration: 222, Log-Lik: -434706.079, Max-Change: 0.00129
-Iteration: 223, Log-Lik: -434706.078, Max-Change: 0.01921
-Iteration: 224, Log-Lik: -434706.076, Max-Change: 0.00141
-Iteration: 225, Log-Lik: -434706.076, Max-Change: 0.00162
-Iteration: 226, Log-Lik: -434706.075, Max-Change: 0.43600
-Iteration: 227, Log-Lik: -434706.048, Max-Change: 0.00083
-Iteration: 228, Log-Lik: -434706.048, Max-Change: 0.00827
-Iteration: 229, Log-Lik: -434706.048, Max-Change: 0.00783
-Iteration: 230, Log-Lik: -434706.047, Max-Change: 0.00088
-Iteration: 231, Log-Lik: -434706.047, Max-Change: 0.00058
-Iteration: 232, Log-Lik: -434706.047, Max-Change: 0.00034
-Iteration: 233, Log-Lik: -434706.047, Max-Change: 0.00032
-Iteration: 234, Log-Lik: -434706.047, Max-Change: 0.00032
-Iteration: 235, Log-Lik: -434706.047, Max-Change: 0.00030
-Iteration: 236, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 237, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 238, Log-Lik: -434706.047, Max-Change: 0.00028
-Iteration: 239, Log-Lik: -434706.047, Max-Change: 0.00028
-Iteration: 240, Log-Lik: -434706.047, Max-Change: 0.00028
-Iteration: 241, Log-Lik: -434706.047, Max-Change: 0.00028
-Iteration: 242, Log-Lik: -434706.047, Max-Change: 0.00028
-Iteration: 243, Log-Lik: -434706.047, Max-Change: 0.00028
-Iteration: 244, Log-Lik: -434706.047, Max-Change: 0.00028
-Iteration: 245, Log-Lik: -434706.047, Max-Change: 0.00028
-Iteration: 246, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 247, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 248, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 249, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 250, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 251, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 252, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 253, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 254, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 255, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 256, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 257, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 258, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 259, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 260, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 261, Log-Lik: -434706.047, Max-Change: 0.00029
-Iteration: 262, Log-Lik: -434706.047, Max-Change: 0.00030
-Iteration: 263, Log-Lik: -434706.047, Max-Change: 0.00030
-Iteration: 264, Log-Lik: -434706.047, Max-Change: 0.00030
-Iteration: 265, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 266, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 267, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 268, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 269, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 270, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 271, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 272, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 273, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 274, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 275, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 276, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 277, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 278, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 279, Log-Lik: -434706.046, Max-Change: 0.00030
-Iteration: 280, Log-Lik: -434706.046, Max-Change: 0.00031
-Iteration: 281, Log-Lik: -434706.046, Max-Change: 0.00031
-Iteration: 282, Log-Lik: -434706.046, Max-Change: 0.00031
-Iteration: 283, Log-Lik: -434706.046, Max-Change: 0.00029
-Iteration: 284, Log-Lik: -434706.046, Max-Change: 0.00029
-Iteration: 285, Log-Lik: -434706.046, Max-Change: 0.00029
-Iteration: 286, Log-Lik: -434706.046, Max-Change: 0.00051
-Iteration: 287, Log-Lik: -434706.046, Max-Change: 0.00070
-Iteration: 288, Log-Lik: -434706.046, Max-Change: 0.00072
-Iteration: 289, Log-Lik: -434706.046, Max-Change: 0.00060
-Iteration: 290, Log-Lik: -434706.046, Max-Change: 0.00037
-Iteration: 291, Log-Lik: -434706.046, Max-Change: 0.00039
-Iteration: 292, Log-Lik: -434706.046, Max-Change: 0.08232
-Iteration: 293, Log-Lik: -434706.044, Max-Change: 0.00025
-Iteration: 294, Log-Lik: -434706.044, Max-Change: 0.00030
-Iteration: 295, Log-Lik: -434706.044, Max-Change: 0.00022
-Iteration: 296, Log-Lik: -434706.044, Max-Change: 0.00022
-Iteration: 297, Log-Lik: -434706.044, Max-Change: 0.00021
-Iteration: 298, Log-Lik: -434706.044, Max-Change: 0.00038
-Iteration: 299, Log-Lik: -434706.044, Max-Change: 0.00021
-Iteration: 300, Log-Lik: -434706.044, Max-Change: 0.00035
-Iteration: 301, Log-Lik: -434706.044, Max-Change: 0.00015
-Iteration: 302, Log-Lik: -434706.044, Max-Change: 0.00017
-Iteration: 303, Log-Lik: -434706.044, Max-Change: 0.00017
-Iteration: 304, Log-Lik: -434706.044, Max-Change: 0.00019
-Iteration: 305, Log-Lik: -434706.044, Max-Change: 0.00021
-Iteration: 306, Log-Lik: -434706.044, Max-Change: 0.00021
-Iteration: 307, Log-Lik: -434706.044, Max-Change: 0.00029
-Iteration: 308, Log-Lik: -434706.044, Max-Change: 0.00019
-Iteration: 309, Log-Lik: -434706.044, Max-Change: 0.00018
-Iteration: 310, Log-Lik: -434706.044, Max-Change: 0.00014
-Iteration: 311, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 312, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 313, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 314, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 315, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 316, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 317, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 318, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 319, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 320, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 321, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 322, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 323, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 324, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 325, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 326, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 327, Log-Lik: -434706.044, Max-Change: 0.00013
-Iteration: 328, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 329, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 330, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 331, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 332, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 333, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 334, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 335, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 336, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 337, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 338, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 339, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 340, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 341, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 342, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 343, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 344, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 345, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 346, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 347, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 348, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 349, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 350, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 351, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 352, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 353, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 354, Log-Lik: -434706.044, Max-Change: 0.00012
-Iteration: 355, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 356, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 357, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 358, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 359, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 360, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 361, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 362, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 363, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 364, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 365, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 366, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 367, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 368, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 369, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 370, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 371, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 372, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 373, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 374, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 375, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 376, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 377, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 378, Log-Lik: -434706.044, Max-Change: 0.00011
-Iteration: 379, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 380, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 381, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 382, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 383, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 384, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 385, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 386, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 387, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 388, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 389, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 390, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 391, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 392, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 393, Log-Lik: -434706.044, Max-Change: 0.00010
-Iteration: 394, Log-Lik: -434706.044, Max-Change: 0.00010
+Iteration: 1, Log-Lik: -487089.654, Max-Change: 1.64859
+Iteration: 2, Log-Lik: -437193.129, Max-Change: 1.07751
+Iteration: 3, Log-Lik: -429264.461, Max-Change: 0.65655
+Iteration: 4, Log-Lik: -425488.314, Max-Change: 0.52464
+Iteration: 5, Log-Lik: -423685.618, Max-Change: 0.42916
+Iteration: 6, Log-Lik: -422741.778, Max-Change: 0.37587
+Iteration: 7, Log-Lik: -422174.007, Max-Change: 0.33346
+Iteration: 8, Log-Lik: -421790.748, Max-Change: 0.22808
+Iteration: 9, Log-Lik: -421532.806, Max-Change: 0.20794
+Iteration: 10, Log-Lik: -421340.292, Max-Change: 0.19378
+Iteration: 11, Log-Lik: -421185.327, Max-Change: 0.17400
+Iteration: 12, Log-Lik: -421062.581, Max-Change: 0.15445
+Iteration: 13, Log-Lik: -420969.731, Max-Change: 0.12338
+Iteration: 14, Log-Lik: -420895.074, Max-Change: 0.15242
+Iteration: 15, Log-Lik: -420831.340, Max-Change: 0.12940
+Iteration: 16, Log-Lik: -420782.307, Max-Change: 0.10753
+Iteration: 17, Log-Lik: -420744.439, Max-Change: 0.09787
+Iteration: 18, Log-Lik: -420714.268, Max-Change: 0.09163
+Iteration: 19, Log-Lik: -420690.005, Max-Change: 0.08095
+Iteration: 20, Log-Lik: -420670.762, Max-Change: 0.06533
+Iteration: 21, Log-Lik: -420655.893, Max-Change: 0.06314
+Iteration: 22, Log-Lik: -420643.870, Max-Change: 0.06709
+Iteration: 23, Log-Lik: -420633.466, Max-Change: 0.04698
+Iteration: 24, Log-Lik: -420626.013, Max-Change: 0.04573
+Iteration: 25, Log-Lik: -420619.768, Max-Change: 0.05843
+Iteration: 26, Log-Lik: -420613.808, Max-Change: 0.03991
+Iteration: 27, Log-Lik: -420609.596, Max-Change: 0.04572
+Iteration: 28, Log-Lik: -420598.723, Max-Change: 0.03092
+Iteration: 29, Log-Lik: -420593.697, Max-Change: 0.02734
+Iteration: 30, Log-Lik: -420592.167, Max-Change: 0.01783
+Iteration: 31, Log-Lik: -420590.685, Max-Change: 0.02257
+Iteration: 32, Log-Lik: -420589.750, Max-Change: 0.03357
+Iteration: 33, Log-Lik: -420588.865, Max-Change: 0.04354
+Iteration: 34, Log-Lik: -420587.164, Max-Change: 0.01156
+Iteration: 35, Log-Lik: -420586.475, Max-Change: 0.00746
+Iteration: 36, Log-Lik: -420586.247, Max-Change: 0.00856
+Iteration: 37, Log-Lik: -420586.026, Max-Change: 0.00604
+Iteration: 38, Log-Lik: -420585.904, Max-Change: 0.00640
+Iteration: 39, Log-Lik: -420585.835, Max-Change: 0.00508
+Iteration: 40, Log-Lik: -420585.816, Max-Change: 0.00562
+Iteration: 41, Log-Lik: -420585.686, Max-Change: 0.00280
+Iteration: 42, Log-Lik: -420585.680, Max-Change: 0.00192
+Iteration: 43, Log-Lik: -420585.672, Max-Change: 0.00187
+Iteration: 44, Log-Lik: -420585.671, Max-Change: 0.00141
+Iteration: 45, Log-Lik: -420585.672, Max-Change: 0.00109
+Iteration: 46, Log-Lik: -420585.673, Max-Change: 0.00149
+Iteration: 47, Log-Lik: -420585.675, Max-Change: 0.00087
+Iteration: 48, Log-Lik: -420585.680, Max-Change: 0.00069
+Iteration: 49, Log-Lik: -420585.683, Max-Change: 0.00087
+Iteration: 50, Log-Lik: -420585.687, Max-Change: 0.00051
+Iteration: 51, Log-Lik: -420585.690, Max-Change: 0.00038
+Iteration: 52, Log-Lik: -420585.693, Max-Change: 0.00053
+Iteration: 53, Log-Lik: -420585.696, Max-Change: 0.00029
+Iteration: 54, Log-Lik: -420585.699, Max-Change: 0.00021
+Iteration: 55, Log-Lik: -420585.700, Max-Change: 0.00027
+Iteration: 56, Log-Lik: -420585.702, Max-Change: 0.00016
+Iteration: 57, Log-Lik: -420585.704, Max-Change: 0.00012
+Iteration: 58, Log-Lik: -420585.705, Max-Change: 0.00015
+Iteration: 59, Log-Lik: -420585.706, Max-Change: 0.00009
 
 Calculating information matrix...
-Time difference of 1.202901 mins
+Time difference of 36.73022 secs
 null device 
           1 
 null device 
           1 
-[1] 18028 20167
+[1] 115 500
 null device 
           1 
 null device 
@@ -499,7 +164,7 @@ null device
 N de alunos  Percentual 
   28727.000     100.002 
 % latex table generated in R 4.5.0 by xtable 1.8-4 package
-% Tue Nov 24 08:42:26 2026
+% Thu Nov 26 13:47:08 2026
 \begin{table}[ht]
 \centering
 \begin{tabular}{rll}
@@ -513,55 +178,54 @@ N de alunos  Percentual
   [125,150) &    0 &  0,000 \\ 
   [150,175) &    0 &  0,000 \\ 
   [175,200) &    0 &  0,000 \\ 
-  [200,225) & 1603 &  5,580 \\ 
-  [225,250) & 4797 & 16,699 \\ 
-  [250,275) & 5223 & 18,182 \\ 
-  [275,300) & 4278 & 14,892 \\ 
-  [300,325) & 3109 & 10,823 \\ 
+  [200,225) & 1604 &  5,584 \\ 
+  [225,250) & 4799 & 16,706 \\ 
+  [250,275) & 5221 & 18,175 \\ 
+  [275,300) & 4279 & 14,895 \\ 
+  [300,325) & 3107 & 10,816 \\ 
   [325,350) & 2706 &  9,420 \\ 
   [350,1e+03) & 7011 & 24,406 \\ 
    \hline
 \end{tabular}
 \end{table}
 % latex table generated in R 4.5.0 by xtable 1.8-4 package
-% Tue Nov 24 08:42:26 2026
+% Thu Nov 26 13:47:08 2026
 \begin{table}[ht]
 \centering
 \begin{tabular}{rlllllll}
   \hline
  & Item & a & b & aSAEB & bSAEB & c & SAEB \\ 
   \hline
-1 & 001 & 0,5170397 &  3,057945 & 0,010340793 &  402,8973 & 0,04019953 & Nao \\ 
-  2 & 002 & 2,2972977 &  2,210630 & 0,045945953 &  360,5315 & 0,08864598 & Nao \\ 
-  3 & 003 & 1,5631445 &  1,317356 & 0,031262891 &  315,8678 & 0,12046281 & Nao \\ 
-  4 & 004 & 2,2829208 &  1,937096 & 0,045658416 &  346,8548 & 0,15511568 & Nao \\ 
-  5 & 005 & 3,0572291 &  2,015472 & 0,061144583 &  350,7736 & 0,14938453 & Nao \\ 
-  6 & 006 & 0,3168962 &  4,416595 & 0,006337924 &  470,8298 & 0,06229990 & Sim \\ 
-  7 & 007 & 1,2448428 &  3,794887 & 0,024896857 &  439,7444 & 0,16827053 & Sim \\ 
-  8 & 008 & 1,2562285 &  3,270071 & 0,025124569 &  413,5035 & 0,21028686 & Sim \\ 
-  9 & 009 & 0,8630775 &  1,032018 & 0,017261551 &  301,6009 & 0,01808640 & Nao \\ 
-  10 & 010 & 1,1430890 &  2,434004 & 0,022861781 &  371,7002 & 0,04865617 & Nao \\ 
-  11 & 011 & 2,1163506 &  2,079271 & 0,042327011 &  353,9636 & 0,22982972 & Nao \\ 
-  12 & 012 & 1,8171547 &  1,988742 & 0,036343094 &  349,4371 & 0,19106367 & Nao \\ 
-  13 & 013 & 0,6981918 &  2,143861 & 0,013963836 &  357,1931 & 0,08090406 & Sim \\ 
-  14 & 014 & 1,0654534 &  1,776712 & 0,021309068 &  338,8356 & 0,15608266 & Sim \\ 
-  15 & 015 & 2,8500000 &  2,357860 & 0,057000000 &  367,8930 & 0,15600000 & Sim \\ 
-  16 & 016 & 1,5849244 &  1,620318 & 0,031698488 &  331,0159 & 0,17003649 & Sim \\ 
-  17 & 017 & 1,7854616 &  2,065464 & 0,035709232 &  353,2732 & 0,26329698 & Sim \\ 
-  18 & 018 & 2,6500000 &  2,024600 & 0,053000000 &  351,2300 & 0,08000000 & Sim \\ 
-  19 & 019 & 1,6500000 &  2,836440 & 0,033000000 &  391,8220 & 0,22000000 & Sim \\ 
-  20 & 020 & 2,8500000 &  2,357860 & 0,057000000 &  367,8930 & 0,15600000 & Sim \\ 
-  21 & 021 & 0,9668470 &  2,509597 & 0,019336940 &  375,4799 & 0,14794983 & Nao \\ 
-  22 & 022 & 1,9488550 &  2,467509 & 0,038977100 &  373,3755 & 0,17650692 & Nao \\ 
-  23 & 023 & 0,5862459 &  2,495868 & 0,011724919 &  374,7934 & 0,02201300 & Nao \\ 
-  24 & 024 & 2,6554164 &  2,368833 & 0,053108327 &  368,4417 & 0,16267889 & Nao \\ 
-  25 & 025 & 0,5142026 & 22,556843 & 0,010284051 & 1377,8421 & 0,19357728 & Nao \\ 
-  26 & 026 & 1,5861314 &  2,541403 & 0,031722627 &  377,0702 & 0,17773689 & Nao \\ 
+1 & 001 & 0,5169725 & 3,058093 & 0,010339449 & 402,9047 & 0,04020597 & Nao \\ 
+  2 & 002 & 2,2969511 & 2,210630 & 0,045939023 & 360,5315 & 0,08864465 & Nao \\ 
+  3 & 003 & 1,5629013 & 1,317229 & 0,031258027 & 315,8614 & 0,12046044 & Nao \\ 
+  4 & 004 & 2,2825677 & 1,937063 & 0,045651354 & 346,8531 & 0,15511453 & Nao \\ 
+  5 & 005 & 3,0567209 & 2,015447 & 0,061134419 & 350,7724 & 0,14938270 & Nao \\ 
+  6 & 006 & 0,3168962 & 4,416595 & 0,006337924 & 470,8298 & 0,06229990 & Sim \\ 
+  7 & 007 & 1,2448428 & 3,794887 & 0,024896857 & 439,7444 & 0,16827053 & Sim \\ 
+  8 & 008 & 1,2562285 & 3,270071 & 0,025124569 & 413,5035 & 0,21028686 & Sim \\ 
+  9 & 009 & 0,8629528 & 1,031852 & 0,017259056 & 301,5926 & 0,01808734 & Nao \\ 
+  10 & 010 & 1,1429316 & 2,434035 & 0,022858631 & 371,7018 & 0,04865637 & Nao \\ 
+  11 & 011 & 2,1160300 & 2,079253 & 0,042320599 & 353,9627 & 0,22982822 & Nao \\ 
+  12 & 012 & 1,8168696 & 1,988705 & 0,036337393 & 349,4353 & 0,19106020 & Nao \\ 
+  13 & 013 & 0,6981918 & 2,143861 & 0,013963836 & 357,1931 & 0,08090406 & Sim \\ 
+  14 & 014 & 1,0654534 & 1,776712 & 0,021309068 & 338,8356 & 0,15608266 & Sim \\ 
+  15 & 015 & 2,8500000 & 2,357860 & 0,057000000 & 367,8930 & 0,15600000 & Sim \\ 
+  16 & 016 & 1,5849244 & 1,620318 & 0,031698488 & 331,0159 & 0,17003649 & Sim \\ 
+  17 & 017 & 1,7854616 & 2,065464 & 0,035709232 & 353,2732 & 0,26329698 & Sim \\ 
+  18 & 018 & 2,6500000 & 2,024600 & 0,053000000 & 351,2300 & 0,08000000 & Sim \\ 
+  19 & 019 & 1,6500000 & 2,836440 & 0,033000000 & 391,8220 & 0,22000000 & Sim \\ 
+  20 & 020 & 2,8500000 & 2,357860 & 0,057000000 & 367,8930 & 0,15600000 & Sim \\ 
+  21 & 021 & 0,9667245 & 2,509644 & 0,019334491 & 375,4822 & 0,14795264 & Nao \\ 
+  22 & 022 & 1,9485832 & 2,467538 & 0,038971664 & 373,3769 & 0,17650570 & Nao \\ 
+  23 & 023 & 0,5861640 & 2,495912 & 0,011723280 & 374,7956 & 0,02201405 & Nao \\ 
+  24 & 024 & 2,6550272 & 2,368848 & 0,053100543 & 368,4424 & 0,16267699 & Nao \\ 
+  25 & 026 & 1,5859119 & 2,541444 & 0,031718238 & 377,0722 & 0,17773616 & Nao \\ 
    \hline
 \end{tabular}
 \end{table}
   media      dp   cv(%)    min.    1o Q    med.     3oQ    max.      ca   curt. 
-302.455  59.593  19.703 210.388 253.486 290.361 348.231 473.168   0.562   2.450 
+302.447  59.600  19.706 210.368 253.472 290.354 348.231 473.176   0.562   2.450 
 pdf 
   2 
 pdf 

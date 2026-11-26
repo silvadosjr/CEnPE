@@ -1,0 +1,21 @@
+Reprocessamento de Matemática em 26/11/2026
+
+Item 25 excluído da TCM e da TRI antes da correção e da estimação.
+25 itens válidos: 1 a 24 e 26. Mantidos 28.727 avaliados e onze âncoras.
+Auditoria dos resultados aprovada: presença/ausência dos itens, parâmetros
+fixados, totais das faixas, resumos EAP e escores individuais. A diferença
+entre cada escore antigo e novo equivale ao acerto anterior no item 25.
+TRI convergiu em 59 iterações; secondordertest = TRUE.
+Média do escore: 9,429769902878824 de 25; média EAP: 302,44694742898776.
+
+Relatório atualizado no padrão anterior, com data de 26/11/2026 e indicação
+de exclusão em ambas as análises. Numeração original preservada em gráficos
+e apêndices. Tabelas TCM, TRI e faixas confrontadas integralmente com XLSX.
+As oito páginas foram abertas para inspeção visual. Ajustou-se a quebra
+antes de Parâmetros dos itens para impedir a divisão da tabela de sinais
+entre as páginas 3 e 4. Estilos, tema, numeração, rodapé e geometria mantidos.
+
+O renderizador produziu PDF e PNGs antes de retornar WinError 145 na limpeza
+do perfil temporário do LibreOffice; a validade dos arquivos produzidos foi
+verificada separadamente por leitura e inspeção. A versão anterior de MT,
+com o item 25, permanece em Historico/2026-11-24_MT_com_item25.

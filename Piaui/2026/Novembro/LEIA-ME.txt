@@ -1,5 +1,18 @@
 SIMULADO VI — 2ª SÉRIE — NOVEMBRO DE 2026
-Processamento em 24/11/2026
+Atualização em 26/11/2026: Matemática sem o item 25 na TCM e na TRI.
+Resultados correntes de MT: 25 itens válidos (1 a 24 e 26), 28.727 avaliados
+e onze âncoras. Escores recalculados sobre 25 itens e TRI reestimada, com
+convergência em 59 iterações. Os relatórios DOCX e PDF de MT foram atualizados.
+Os escores novos foram conferidos individualmente contra os antigos: a
+diferença corresponde exatamente ao eventual acerto no item 25. Os parâmetros
+das onze âncoras foram preservados. Português permanece com 26 itens.
+Histórico integral de MT com item 25: Historico/2026-11-24_MT_com_item25.
+Para reproduzir a versão atual, executar os scripts MT S6 e gerar o relatório
+com REPORT_PROFILE=2EM_MT. O gerador prepara_programas.py já incorpora a exclusão.
+
+REGISTRO HISTÓRICO DO PRIMEIRO PROCESSAMENTO EM 24/11/2026
+O conteúdo a seguir descreve a execução anterior, substituída em MT pela
+atualização acima. A ressalva do item 25 fundamentou a solicitação de exclusão.
 
 Escopo
 Análises TCM e TRI 3PL de Língua Portuguesa e Matemática, no padrão dos

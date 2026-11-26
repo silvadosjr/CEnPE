@@ -14,15 +14,17 @@
       19,
       20
     ],
-    "itens_TCM_sinalizados": []
+    "itens_TCM_sinalizados": [],
+    "itens_excluidos": [],
+    "data_processamento": "2026-11-24"
   },
   "2EM_MT": {
     "N": 28727,
-    "media_escore": 9.62335085459672,
-    "media_EAP": 302.45455501787643,
-    "DP_EAP": 59.59250952063052,
-    "TCM": 26,
-    "TRI": 26,
+    "media_escore": 9.429769902878824,
+    "media_EAP": 302.44694742898776,
+    "DP_EAP": 59.60025415356954,
+    "TCM": 25,
+    "TRI": 25,
     "ancoras": [
       6,
       7,
@@ -36,8 +38,10 @@
       19,
       20
     ],
-    "itens_TCM_sinalizados": [
+    "itens_TCM_sinalizados": [],
+    "itens_excluidos": [
       25
-    ]
+    ],
+    "data_processamento": "2026-11-26"
   }
 }

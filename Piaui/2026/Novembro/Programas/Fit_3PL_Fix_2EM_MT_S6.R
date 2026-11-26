@@ -70,10 +70,12 @@ base <- base %>%
   dplyr::filter(disciplina_descricao == "MATEMÁTICA")
 
 # 2.3) Elimina itens/colunas específicas, se necessário
-# suppressWarnings({
-#   base <- base %>%
-#     dplyr::select(-dplyr::any_of(c("rpa_024", "rp_024"))) # Possível conflito de gabarito
-# })
+ suppressWarnings({
+   base <- base %>%
+     dplyr::select(-dplyr::any_of(c("rpa_025", "rp_025"))) # Possível conflito de gabarito
+ })
+
+
 
 # 2.4) Extrai gabarito: colunas "rp_*", exceto "rpa_*"
 gabar_cols <- base %>%
@@ -135,6 +137,7 @@ InfoItens<-read_xlsx(file.path(dados_dir,'gabarito_2serie_mt 6ª SIMULA.xlsx'),s
 #alfa = 55.8923279
 #beta = 249.964381
 
+InfoItens <- InfoItens[InfoItens$Item != 25, ]
 names(InfoItens)[toupper(names(InfoItens)) == 'CONHECIDO'] <- 'Conhecido'
 stopifnot(identical(as.integer(InfoItens$Item), as.integer(substring(auxnomesitens,5))))
 v_item_conhecido <- !is.na(InfoItens$Conhecido) & nzchar(trimws(InfoItens$Conhecido))

@@ -14,6 +14,9 @@ for profile in ['LP', 'MT']:
 stopifnot(identical(as.integer(InfoItens$Item), as.integer(substring(auxnomesitens,5))))
 v_item_conhecido <- !is.na(InfoItens$Conhecido) & nzchar(trimws(InfoItens$Conhecido))''')
         text = text.replace("InfoItens <- InfoItens %>% filter(Conhecido=='Sim')", "InfoItens <- InfoItens[v_item_conhecido, ]")
+        if profile == 'MT':
+            text = text.replace('# 2.4) Extrai gabarito:', "# Exclusão do item 25 da TCM e da TRI por solicitação em 26/11/2026.\nbase <- base %>% dplyr::select(-dplyr::all_of(c('rpa_025', 'rp_025')))\n\n# 2.4) Extrai gabarito:")
+            text = text.replace("names(InfoItens)[toupper(names(InfoItens))", "InfoItens <- InfoItens[InfoItens$Item != 25, ]\nnames(InfoItens)[toupper(names(InfoItens))")
         if prefix == 'Fit_3PL_Fix':
             text = 'set.seed(20261124)\n' + text
             text += '''
