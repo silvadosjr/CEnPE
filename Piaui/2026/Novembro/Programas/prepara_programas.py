@@ -18,6 +18,8 @@ v_item_conhecido <- !is.na(InfoItens$Conhecido) & nzchar(trimws(InfoItens$Conhec
             text = text.replace('# 2.4) Extrai gabarito:', "# Exclusão do item 25 da TCM e da TRI por solicitação em 26/11/2026.\nbase <- base %>% dplyr::select(-dplyr::all_of(c('rpa_025', 'rp_025')))\n\n# 2.4) Extrai gabarito:")
             text = text.replace("names(InfoItens)[toupper(names(InfoItens))", "InfoItens <- InfoItens[InfoItens$Item != 25, ]\nnames(InfoItens)[toupper(names(InfoItens))")
         if prefix == 'Fit_3PL_Fix':
+            if profile == 'MT':
+                text = text.replace('InfoItens <- InfoItens[v_item_conhecido, ]', '# Item 6 liberado para estimação por solicitação em 26/11/2026.\nv_item_conhecido <- v_item_conhecido & InfoItens$Item != 6\nInfoItens <- InfoItens[v_item_conhecido, ]')
             text = 'set.seed(20261124)\n' + text
             text += '''
 # Registro da estimação para auditoria e reprodutibilidade.

@@ -82,68 +82,72 @@ Pasta dos resultados: C:/Users/Usuário/OneDrive/Documentos/GitHub/CEnPE/Piaui/2
 ==============================
 
 
-Iteration: 1, Log-Lik: -487089.654, Max-Change: 1.64859
-Iteration: 2, Log-Lik: -437193.129, Max-Change: 1.07751
-Iteration: 3, Log-Lik: -429264.461, Max-Change: 0.65655
-Iteration: 4, Log-Lik: -425488.314, Max-Change: 0.52464
-Iteration: 5, Log-Lik: -423685.618, Max-Change: 0.42916
-Iteration: 6, Log-Lik: -422741.778, Max-Change: 0.37587
-Iteration: 7, Log-Lik: -422174.007, Max-Change: 0.33346
-Iteration: 8, Log-Lik: -421790.748, Max-Change: 0.22808
-Iteration: 9, Log-Lik: -421532.806, Max-Change: 0.20794
-Iteration: 10, Log-Lik: -421340.292, Max-Change: 0.19378
-Iteration: 11, Log-Lik: -421185.327, Max-Change: 0.17400
-Iteration: 12, Log-Lik: -421062.581, Max-Change: 0.15445
-Iteration: 13, Log-Lik: -420969.731, Max-Change: 0.12338
-Iteration: 14, Log-Lik: -420895.074, Max-Change: 0.15242
-Iteration: 15, Log-Lik: -420831.340, Max-Change: 0.12940
-Iteration: 16, Log-Lik: -420782.307, Max-Change: 0.10753
-Iteration: 17, Log-Lik: -420744.439, Max-Change: 0.09787
-Iteration: 18, Log-Lik: -420714.268, Max-Change: 0.09163
-Iteration: 19, Log-Lik: -420690.005, Max-Change: 0.08095
-Iteration: 20, Log-Lik: -420670.762, Max-Change: 0.06533
-Iteration: 21, Log-Lik: -420655.893, Max-Change: 0.06314
-Iteration: 22, Log-Lik: -420643.870, Max-Change: 0.06709
-Iteration: 23, Log-Lik: -420633.466, Max-Change: 0.04698
-Iteration: 24, Log-Lik: -420626.013, Max-Change: 0.04573
-Iteration: 25, Log-Lik: -420619.768, Max-Change: 0.05843
-Iteration: 26, Log-Lik: -420613.808, Max-Change: 0.03991
-Iteration: 27, Log-Lik: -420609.596, Max-Change: 0.04572
-Iteration: 28, Log-Lik: -420598.723, Max-Change: 0.03092
-Iteration: 29, Log-Lik: -420593.697, Max-Change: 0.02734
-Iteration: 30, Log-Lik: -420592.167, Max-Change: 0.01783
-Iteration: 31, Log-Lik: -420590.685, Max-Change: 0.02257
-Iteration: 32, Log-Lik: -420589.750, Max-Change: 0.03357
-Iteration: 33, Log-Lik: -420588.865, Max-Change: 0.04354
-Iteration: 34, Log-Lik: -420587.164, Max-Change: 0.01156
-Iteration: 35, Log-Lik: -420586.475, Max-Change: 0.00746
-Iteration: 36, Log-Lik: -420586.247, Max-Change: 0.00856
-Iteration: 37, Log-Lik: -420586.026, Max-Change: 0.00604
-Iteration: 38, Log-Lik: -420585.904, Max-Change: 0.00640
-Iteration: 39, Log-Lik: -420585.835, Max-Change: 0.00508
-Iteration: 40, Log-Lik: -420585.816, Max-Change: 0.00562
-Iteration: 41, Log-Lik: -420585.686, Max-Change: 0.00280
-Iteration: 42, Log-Lik: -420585.680, Max-Change: 0.00192
-Iteration: 43, Log-Lik: -420585.672, Max-Change: 0.00187
-Iteration: 44, Log-Lik: -420585.671, Max-Change: 0.00141
-Iteration: 45, Log-Lik: -420585.672, Max-Change: 0.00109
-Iteration: 46, Log-Lik: -420585.673, Max-Change: 0.00149
-Iteration: 47, Log-Lik: -420585.675, Max-Change: 0.00087
-Iteration: 48, Log-Lik: -420585.680, Max-Change: 0.00069
-Iteration: 49, Log-Lik: -420585.683, Max-Change: 0.00087
-Iteration: 50, Log-Lik: -420585.687, Max-Change: 0.00051
-Iteration: 51, Log-Lik: -420585.690, Max-Change: 0.00038
-Iteration: 52, Log-Lik: -420585.693, Max-Change: 0.00053
-Iteration: 53, Log-Lik: -420585.696, Max-Change: 0.00029
-Iteration: 54, Log-Lik: -420585.699, Max-Change: 0.00021
-Iteration: 55, Log-Lik: -420585.700, Max-Change: 0.00027
-Iteration: 56, Log-Lik: -420585.702, Max-Change: 0.00016
-Iteration: 57, Log-Lik: -420585.704, Max-Change: 0.00012
-Iteration: 58, Log-Lik: -420585.705, Max-Change: 0.00015
-Iteration: 59, Log-Lik: -420585.706, Max-Change: 0.00009
+Iteration: 1, Log-Lik: -487616.345, Max-Change: 1.64796
+Iteration: 2, Log-Lik: -437407.927, Max-Change: 1.10775
+Iteration: 3, Log-Lik: -429250.597, Max-Change: 0.70097
+Iteration: 4, Log-Lik: -425281.540, Max-Change: 0.49747
+Iteration: 5, Log-Lik: -423422.446, Max-Change: 0.43335
+Iteration: 6, Log-Lik: -422449.283, Max-Change: 0.39053
+Iteration: 7, Log-Lik: -421871.634, Max-Change: 0.31870
+Iteration: 8, Log-Lik: -421493.693, Max-Change: 0.26047
+Iteration: 9, Log-Lik: -421224.525, Max-Change: 0.21707
+Iteration: 10, Log-Lik: -421025.125, Max-Change: 0.19742
+Iteration: 11, Log-Lik: -420866.288, Max-Change: 0.19925
+Iteration: 12, Log-Lik: -420733.645, Max-Change: 0.15329
+Iteration: 13, Log-Lik: -420633.930, Max-Change: 0.14180
+Iteration: 14, Log-Lik: -420551.503, Max-Change: 0.12602
+Iteration: 15, Log-Lik: -420485.129, Max-Change: 0.10211
+Iteration: 16, Log-Lik: -420433.355, Max-Change: 0.11067
+Iteration: 17, Log-Lik: -420389.870, Max-Change: 0.08091
+Iteration: 18, Log-Lik: -420356.439, Max-Change: 0.09654
+Iteration: 19, Log-Lik: -420327.476, Max-Change: 0.06947
+Iteration: 20, Log-Lik: -420306.026, Max-Change: 0.08782
+Iteration: 21, Log-Lik: -420286.659, Max-Change: 0.10178
+Iteration: 22, Log-Lik: -420269.329, Max-Change: 0.05912
+Iteration: 23, Log-Lik: -420256.993, Max-Change: 0.04819
+Iteration: 24, Log-Lik: -420247.474, Max-Change: 0.05172
+Iteration: 25, Log-Lik: -420239.111, Max-Change: 0.04919
+Iteration: 26, Log-Lik: -420232.358, Max-Change: 0.03687
+Iteration: 27, Log-Lik: -420227.267, Max-Change: 0.04066
+Iteration: 28, Log-Lik: -420222.707, Max-Change: 0.05950
+Iteration: 29, Log-Lik: -420218.049, Max-Change: 0.03023
+Iteration: 30, Log-Lik: -420215.110, Max-Change: 0.05455
+Iteration: 31, Log-Lik: -420208.992, Max-Change: 0.02931
+Iteration: 32, Log-Lik: -420206.971, Max-Change: 0.02690
+Iteration: 33, Log-Lik: -420205.428, Max-Change: 0.02299
+Iteration: 34, Log-Lik: -420202.966, Max-Change: 0.02052
+Iteration: 35, Log-Lik: -420200.448, Max-Change: 0.01801
+Iteration: 36, Log-Lik: -420199.876, Max-Change: 0.02252
+Iteration: 37, Log-Lik: -420198.732, Max-Change: 0.01089
+Iteration: 38, Log-Lik: -420198.271, Max-Change: 0.01117
+Iteration: 39, Log-Lik: -420198.065, Max-Change: 0.01399
+Iteration: 40, Log-Lik: -420197.737, Max-Change: 0.00701
+Iteration: 41, Log-Lik: -420197.577, Max-Change: 0.00429
+Iteration: 42, Log-Lik: -420197.516, Max-Change: 0.00366
+Iteration: 43, Log-Lik: -420197.497, Max-Change: 0.00560
+Iteration: 44, Log-Lik: -420197.376, Max-Change: 0.00286
+Iteration: 45, Log-Lik: -420197.371, Max-Change: 0.00200
+Iteration: 46, Log-Lik: -420197.360, Max-Change: 0.00210
+Iteration: 47, Log-Lik: -420197.359, Max-Change: 0.00146
+Iteration: 48, Log-Lik: -420197.361, Max-Change: 0.00127
+Iteration: 49, Log-Lik: -420197.369, Max-Change: 0.00209
+Iteration: 50, Log-Lik: -420197.363, Max-Change: 0.00104
+Iteration: 51, Log-Lik: -420197.370, Max-Change: 0.00072
+Iteration: 52, Log-Lik: -420197.373, Max-Change: 0.00065
+Iteration: 53, Log-Lik: -420197.377, Max-Change: 0.00050
+Iteration: 54, Log-Lik: -420197.381, Max-Change: 0.00042
+Iteration: 55, Log-Lik: -420197.384, Max-Change: 0.00075
+Iteration: 56, Log-Lik: -420197.388, Max-Change: 0.00037
+Iteration: 57, Log-Lik: -420197.391, Max-Change: 0.00025
+Iteration: 58, Log-Lik: -420197.393, Max-Change: 0.00024
+Iteration: 59, Log-Lik: -420197.395, Max-Change: 0.00018
+Iteration: 60, Log-Lik: -420197.397, Max-Change: 0.00015
+Iteration: 61, Log-Lik: -420197.398, Max-Change: 0.00026
+Iteration: 62, Log-Lik: -420197.400, Max-Change: 0.00013
+Iteration: 63, Log-Lik: -420197.401, Max-Change: 0.00009
 
 Calculating information matrix...
-Time difference of 36.73022 secs
+Time difference of 12.08783 secs
 null device 
           1 
 null device 
@@ -162,9 +166,9 @@ null device
 null device 
           1 
 N de alunos  Percentual 
-  28727.000     100.002 
+      28727         100 
 % latex table generated in R 4.5.0 by xtable 1.8-4 package
-% Thu Nov 26 13:47:08 2026
+% Thu Nov 26 14:14:32 2026
 \begin{table}[ht]
 \centering
 \begin{tabular}{rll}
@@ -178,54 +182,54 @@ N de alunos  Percentual
   [125,150) &    0 &  0,000 \\ 
   [150,175) &    0 &  0,000 \\ 
   [175,200) &    0 &  0,000 \\ 
-  [200,225) & 1604 &  5,584 \\ 
-  [225,250) & 4799 & 16,706 \\ 
-  [250,275) & 5221 & 18,175 \\ 
-  [275,300) & 4279 & 14,895 \\ 
-  [300,325) & 3107 & 10,816 \\ 
-  [325,350) & 2706 &  9,420 \\ 
-  [350,1e+03) & 7011 & 24,406 \\ 
+  [200,225) & 1870 &  6,510 \\ 
+  [225,250) & 4946 & 17,217 \\ 
+  [250,275) & 5065 & 17,631 \\ 
+  [275,300) & 4194 & 14,600 \\ 
+  [300,325) & 3033 & 10,558 \\ 
+  [325,350) & 2666 &  9,280 \\ 
+  [350,1e+03) & 6953 & 24,204 \\ 
    \hline
 \end{tabular}
 \end{table}
 % latex table generated in R 4.5.0 by xtable 1.8-4 package
-% Thu Nov 26 13:47:08 2026
+% Thu Nov 26 14:14:32 2026
 \begin{table}[ht]
 \centering
 \begin{tabular}{rlllllll}
   \hline
  & Item & a & b & aSAEB & bSAEB & c & SAEB \\ 
   \hline
-1 & 001 & 0,5169725 & 3,058093 & 0,010339449 & 402,9047 & 0,04020597 & Nao \\ 
-  2 & 002 & 2,2969511 & 2,210630 & 0,045939023 & 360,5315 & 0,08864465 & Nao \\ 
-  3 & 003 & 1,5629013 & 1,317229 & 0,031258027 & 315,8614 & 0,12046044 & Nao \\ 
-  4 & 004 & 2,2825677 & 1,937063 & 0,045651354 & 346,8531 & 0,15511453 & Nao \\ 
-  5 & 005 & 3,0567209 & 2,015447 & 0,061134419 & 350,7724 & 0,14938270 & Nao \\ 
-  6 & 006 & 0,3168962 & 4,416595 & 0,006337924 & 470,8298 & 0,06229990 & Sim \\ 
-  7 & 007 & 1,2448428 & 3,794887 & 0,024896857 & 439,7444 & 0,16827053 & Sim \\ 
-  8 & 008 & 1,2562285 & 3,270071 & 0,025124569 & 413,5035 & 0,21028686 & Sim \\ 
-  9 & 009 & 0,8629528 & 1,031852 & 0,017259056 & 301,5926 & 0,01808734 & Nao \\ 
-  10 & 010 & 1,1429316 & 2,434035 & 0,022858631 & 371,7018 & 0,04865637 & Nao \\ 
-  11 & 011 & 2,1160300 & 2,079253 & 0,042320599 & 353,9627 & 0,22982822 & Nao \\ 
-  12 & 012 & 1,8168696 & 1,988705 & 0,036337393 & 349,4353 & 0,19106020 & Nao \\ 
-  13 & 013 & 0,6981918 & 2,143861 & 0,013963836 & 357,1931 & 0,08090406 & Sim \\ 
-  14 & 014 & 1,0654534 & 1,776712 & 0,021309068 & 338,8356 & 0,15608266 & Sim \\ 
-  15 & 015 & 2,8500000 & 2,357860 & 0,057000000 & 367,8930 & 0,15600000 & Sim \\ 
-  16 & 016 & 1,5849244 & 1,620318 & 0,031698488 & 331,0159 & 0,17003649 & Sim \\ 
-  17 & 017 & 1,7854616 & 2,065464 & 0,035709232 & 353,2732 & 0,26329698 & Sim \\ 
-  18 & 018 & 2,6500000 & 2,024600 & 0,053000000 & 351,2300 & 0,08000000 & Sim \\ 
-  19 & 019 & 1,6500000 & 2,836440 & 0,033000000 & 391,8220 & 0,22000000 & Sim \\ 
-  20 & 020 & 2,8500000 & 2,357860 & 0,057000000 & 367,8930 & 0,15600000 & Sim \\ 
-  21 & 021 & 0,9667245 & 2,509644 & 0,019334491 & 375,4822 & 0,14795264 & Nao \\ 
-  22 & 022 & 1,9485832 & 2,467538 & 0,038971664 & 373,3769 & 0,17650570 & Nao \\ 
-  23 & 023 & 0,5861640 & 2,495912 & 0,011723280 & 374,7956 & 0,02201405 & Nao \\ 
-  24 & 024 & 2,6550272 & 2,368848 & 0,053100543 & 368,4424 & 0,16267699 & Nao \\ 
-  25 & 026 & 1,5859119 & 2,541444 & 0,031718238 & 377,0722 & 0,17773616 & Nao \\ 
+1 & 001 & 0,5148671 & 3,052460 & 0,01029734 & 402,6230 & 0,04108377 & Nao \\ 
+  2 & 002 & 2,2910438 & 2,201996 & 0,04582088 & 360,0998 & 0,08932380 & Nao \\ 
+  3 & 003 & 1,5610888 & 1,306465 & 0,03122178 & 315,3232 & 0,12342798 & Nao \\ 
+  4 & 004 & 2,2845926 & 1,929665 & 0,04569185 & 346,4833 & 0,15677508 & Nao \\ 
+  5 & 005 & 3,0614531 & 2,006758 & 0,06122906 & 350,3379 & 0,15026952 & Nao \\ 
+  6 & 006 & 0,5377725 & 2,921890 & 0,01075545 & 396,0945 & 0,12653255 & Nao \\ 
+  7 & 007 & 1,2448428 & 3,794887 & 0,02489686 & 439,7444 & 0,16827053 & Sim \\ 
+  8 & 008 & 1,2562285 & 3,270071 & 0,02512457 & 413,5035 & 0,21028686 & Sim \\ 
+  9 & 009 & 0,8592661 & 1,009323 & 0,01718532 & 300,4661 & 0,01797531 & Nao \\ 
+  10 & 010 & 1,1431600 & 2,424459 & 0,02286320 & 371,2229 & 0,04984259 & Nao \\ 
+  11 & 011 & 2,1102960 & 2,069346 & 0,04220592 & 353,4673 & 0,23040014 & Nao \\ 
+  12 & 012 & 1,8111478 & 1,977994 & 0,03622296 & 348,8997 & 0,19174861 & Nao \\ 
+  13 & 013 & 0,6981918 & 2,143861 & 0,01396384 & 357,1931 & 0,08090406 & Sim \\ 
+  14 & 014 & 1,0654534 & 1,776712 & 0,02130907 & 338,8356 & 0,15608266 & Sim \\ 
+  15 & 015 & 2,8500000 & 2,357860 & 0,05700000 & 367,8930 & 0,15600000 & Sim \\ 
+  16 & 016 & 1,5849244 & 1,620318 & 0,03169849 & 331,0159 & 0,17003649 & Sim \\ 
+  17 & 017 & 1,7854616 & 2,065464 & 0,03570923 & 353,2732 & 0,26329698 & Sim \\ 
+  18 & 018 & 2,6500000 & 2,024600 & 0,05300000 & 351,2300 & 0,08000000 & Sim \\ 
+  19 & 019 & 1,6500000 & 2,836440 & 0,03300000 & 391,8220 & 0,22000000 & Sim \\ 
+  20 & 020 & 2,8500000 & 2,357860 & 0,05700000 & 367,8930 & 0,15600000 & Sim \\ 
+  21 & 021 & 0,9693061 & 2,505481 & 0,01938612 & 375,2741 & 0,15032689 & Nao \\ 
+  22 & 022 & 1,9474145 & 2,459454 & 0,03894829 & 372,9727 & 0,17714134 & Nao \\ 
+  23 & 023 & 0,5828528 & 2,483130 & 0,01165706 & 374,1565 & 0,02207064 & Nao \\ 
+  24 & 024 & 2,6354651 & 2,360041 & 0,05270930 & 368,0020 & 0,16275300 & Nao \\ 
+  25 & 026 & 1,5844964 & 2,533331 & 0,03168993 & 376,6665 & 0,17844561 & Nao \\ 
    \hline
 \end{tabular}
 \end{table}
   media      dp   cv(%)    min.    1o Q    med.     3oQ    max.      ca   curt. 
-302.447  59.600  19.706 210.368 253.472 290.354 348.231 473.176   0.562   2.450 
+301.295  60.146  19.963 208.388 251.689 289.340 347.655 473.406   0.553   2.433 
 pdf 
   2 
 pdf 

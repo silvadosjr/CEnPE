@@ -1,5 +1,13 @@
 SIMULADO VI — 2ª SÉRIE — NOVEMBRO DE 2026
-Atualização em 26/11/2026: Matemática sem o item 25 na TCM e na TRI.
+Última atualização em 26/11/2026: Matemática sem o item 25 e com o item 6
+livre para estimação dos parâmetros a, b e c na TRI. Dez âncoras permanecem:
+7, 8, 13, 14, 15, 16, 17, 18, 19 e 20. A TCM não mudou nesta atualização.
+A versão imediatamente anterior, sem 25 e com o item 6 fixado, foi preservada
+em Historico/2026-11-26_MT_sem25_item6_fixo. Os gabaritos originais permanecem
+intactos; a liberação é definida no script TRI e em prepara_programas.py.
+
+REGISTRO DA ATUALIZAÇÃO ANTERIOR EM 26/11/2026
+Matemática sem o item 25 na TCM e na TRI, ainda com o item 6 fixado.
 Resultados correntes de MT: 25 itens válidos (1 a 24 e 26), 28.727 avaliados
 e onze âncoras. Escores recalculados sobre 25 itens e TRI reestimada, com
 convergência em 59 iterações. Os relatórios DOCX e PDF de MT foram atualizados.

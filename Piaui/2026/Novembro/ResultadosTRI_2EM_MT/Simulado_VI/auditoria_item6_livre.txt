@@ -1,0 +1,8 @@
+   group    item class name parnum  value lbound ubound  est const nconst
+21   all rpa_006  dich   a1     21  0.538      0    Inf TRUE  none   none
+22   all rpa_006  dich    d     22 -1.571   -Inf    Inf TRUE  none   none
+23   all rpa_006  dich    g     23  0.127      0      1 TRUE  none   none
+   prior.type prior_1 prior_2
+21      lnorm  -0.206     0.6
+22       norm   0.000    10.0
+23       norm  -1.300     0.7

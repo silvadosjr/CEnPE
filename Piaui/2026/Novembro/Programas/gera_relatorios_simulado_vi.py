@@ -30,8 +30,12 @@ source = source.replace('"Informações gerais.odt, com as ressalvas técnicas r
 source = source.replace('MedidasTCM_Item.xlsx e Informações gerais.odt.', 'MedidasTCM_Item.xlsx e auditoria dos dados e gabaritos do Simulado VI.')
 source = source.replace('"IC 95% da média"', '"IC 95% média populacional"')
 source = source.replace('O intervalo de confiança é reproduzido do arquivo de resultados; não representa o erro individual de proficiência.', 'O intervalo de confiança refere-se à média populacional estimada em ResumoThetaIC, cujo estimador difere da média individual EAP em ResumoTheta. Não representa erro individual de proficiência; o DP EAP também difere do desvio-padrão populacional estimado.')
-source = source.replace('    doc.add_heading("3. Resultados da TCM", level=1)', '''    doc.add_paragraph("Os gabaritos conferem com as colunas rp da base. Selecionaram-se registros com fl_avaliado = 1, sem matrícula duplicada por disciplina. " + ("O item 25 foi excluído da TCM e da TRI em 26/11/2026 por solicitação do responsável, com 25 itens válidos e numeração original preservada. " if profile == "2EM_MT" else "Mantiveram-se os 26 itens e as chaves fornecidas. ") + "A ancoragem usa aSAEB, bSAEB e c; diferenças com as colunas a e b constam da auditoria de entrada.")
+source = source.replace('    doc.add_heading("3. Resultados da TCM", level=1)', '''    doc.add_paragraph("Os gabaritos conferem com a base. Incluíram-se apenas avaliados (fl_avaliado = 1), sem matrícula duplicada. " + ("Excluiu-se o item 25 da TCM e da TRI; mantiveram-se 25 itens e a numeração original. O item 6 foi liberado para estimação de a, b e c, com dez âncoras. " if profile == "2EM_MT" else "Mantiveram-se os 26 itens e as chaves fornecidas. ") + "As âncoras usam aSAEB, bSAEB e c; diferenças de arredondamento estão na auditoria de entrada.")
     doc.add_heading("3. Resultados da TCM", level=1)''')
+source = source.replace('    doc.add_heading("Parâmetros dos itens", level=2).paragraph_format.page_break_before = (profile == "2EM_MT")', '''    doc.add_heading("Parâmetros dos itens", level=2).paragraph_format.page_break_before = (profile == "2EM_MT")
+    if profile == "2EM_MT":
+        item6 = items.loc[items.Item == 6].iloc[0]
+        doc.add_paragraph(f"O item 6 foi mantido na prova e teve os três parâmetros liberados para estimação: a = {fmt_num(item6.a, 3)}, b na escala 250 e 50 = {fmt_num(item6.bSAEB, 1)} e c = {fmt_num(item6.c, 3)}. Seus valores do gabarito deixaram de ser fixados. Permanecem como âncoras os itens 7, 8, 13, 14, 15, 16, 17, 18, 19 e 20. A mudança requer acompanhamento da estabilidade da ligação entre aplicações.")''')
 n = {'__file__':__file__, '__name__':'s6_components'}
 exec(compile(source,__file__,'exec'),n)
 n['PROFILES'] = ['2EM_LP','2EM_MT']
@@ -42,10 +46,10 @@ n['PROFILE_NOTES'] = {
   'narrative':'As proporções de acertos variaram de 24,6% no item 19 a 85,4% no item 1. Os itens 19, 25 e 26 tiveram respectivamente 24,6%, 29,3% e 24,8% de acertos. Suas correlações ponto-bisseriais foram 0,213, 0,248 e 0,221, acima do limiar diagnóstico de 0,20. Nenhuma exclusão ou alteração de chave foi aplicada. A ausência de indicadores abaixo do limiar não substitui a análise TRI e a revisão pedagógica.',
   'recommendations':['Examinar os itens 19, 25 e 26 quanto à dificuldade, clareza e adequação ao conteúdo trabalhado.','Examinar os parâmetros TRI e as curvas dos itens antes de reutilizá-los.','Planejar intervenções a partir dos conteúdos e da distribuição de proficiência, sem atribuir níveis pedagógicos a faixas não validadas.']},
  '2EM_MT': {
-  'lead':'Leitura principal. O Simulado VI de Matemática da 2ª série foi reprocessado sem o item 25 na TCM e na TRI, por solicitação em 26/11/2026. As análises utilizam 25 itens, com onze itens de ancoragem e 28.727 avaliados. Os escores brutos e seus percentuais foram recalculados sobre 25 itens; as proficiências foram reestimadas.',
+  'lead':'Leitura principal. O Simulado VI de Matemática da 2ª série foi reprocessado sem o item 25 na TCM e na TRI, por solicitação em 26/11/2026. As análises utilizam 25 itens, com dez itens de ancoragem e 28.727 avaliados. O item 6 foi liberado para estimação de a, b e c em 26/11/2026; as proficiências foram reestimadas com dez âncoras. A TCM permanece calculada sobre os mesmos 25 itens.',
   'diagnostic_items':[], 'status':{},
   'narrative':'O item 25 foi retirado antes da correção e da estimação, preservando-se os números 1 a 24 e 26 para os itens válidos. A exclusão não atribui ponto ao item e não altera as chaves dos demais itens. Os indicadores TCM, incluindo discriminação por grupos e correlações, foram recalculados com o escore de 25 itens. Nenhum item válido apresentou discriminação ou correlação ponto-bisserial abaixo de 0,20. As proporções de acertos variaram de 26,5% no item 7 a 51,3% no item 9. O item excluído não integra os gráficos, parâmetros nem apêndices desta versão. O diagnóstico anterior indicava possível conflito de gabarito; sua resolução pedagógica permanece necessária antes de qualquer reutilização. A versão com o item 25 foi preservada na pasta Historico/2026-11-24_MT_com_item25.',
-  'recommendations':['Usar o denominador de 25 itens para interpretar os escores e percentuais desta versão e manter documentada a exclusão do item 25 da TCM e da TRI.','Revisar o enunciado, a resolução e o gabarito do item 25 antes de qualquer reutilização. A exclusão desta análise não equivale à troca de sua chave.','Examinar os parâmetros e as curvas dos itens válidos e a cobertura de dificuldade, sobretudo entre os onze itens fixados.','Evitar comparar diretamente as médias das duas disciplinas como medidas equivalentes de desempenho.']}
+  'recommendations':['Usar o denominador de 25 itens para interpretar os escores e percentuais desta versão e manter documentada a exclusão do item 25 da TCM e da TRI.','Revisar o enunciado, a resolução e o gabarito do item 25 antes de qualquer reutilização. A exclusão desta análise não equivale à troca de sua chave.','Examinar os parâmetros e as curvas dos itens válidos e a cobertura de dificuldade, sobretudo entre os dez itens fixados. Documentar a liberação do item 6 e acompanhar seus parâmetros estimados e a estabilidade da ligação à escala.','Evitar comparar diretamente as médias das duas disciplinas como medidas equivalentes de desempenho.']}
 }
 
 def audit_results():
@@ -65,20 +69,21 @@ def audit_results():
         assert scores.iloc[:,1].between(0,len(expected)).all()
         if profile == '2EM_MT':
             assert 'rpa_025' not in theta.columns
-            old = n['pd'].read_excel(ROOT/'Historico/2026-11-24_MT_com_item25/ResultadosTCM_2EM_MT/Simulado_VI/EscoresBrutos_Aluno.xlsx')
-            raw = n['pd'].read_excel(ROOT/'Dados/df - 2ª SÉRIE 6º SIMULA.xlsx',usecols=['disciplina_descricao','matricula','fl_avaliado','rp_025','rpa_025'])
-            raw=raw[(raw.disciplina_descricao=='MATEMÁTICA') & (raw.fl_avaliado==1)]
-            assert raw.matricula.astype(str).tolist()==scores.matricula.astype(str).tolist()
-            assert np.array_equal(old.iloc[:,1].to_numpy()-scores.iloc[:,1].to_numpy(),(raw.rpa_025==raw.rp_025).astype(int).to_numpy())
+            prior_root = ROOT/'Historico/2026-11-26_MT_sem25_item6_fixo'
+            prior_scores=n['pd'].read_excel(prior_root/'ResultadosTCM_2EM_MT/Simulado_VI/EscoresBrutos_Aluno.xlsx')
+            assert scores.equals(prior_scores)
+            assert items.loc[items.Item==6,'SAEB'].iloc[0] != 'Sim'
         assert np.allclose(items.bSAEB,250+50*items.b)
         info=n['pd'].read_excel(next((ROOT/'Dados').glob(f'gabarito*{profile[-2:].lower()}*')))
         known=info.iloc[:,-1].notna()
+        if profile == '2EM_MT':
+            known = known & (info.Item != 6)
         fixed=items[items.SAEB=='Sim']
         assert fixed.Item.tolist()==info.loc[known,'Item'].tolist()
         assert np.allclose(fixed.a,info.loc[known,'aSAEB']*50)
         assert np.allclose(fixed.bSAEB,info.loc[known,'bSAEB'])
         assert np.allclose(fixed.c,info.loc[known,'c'])
-        audit[profile]={'N':len(scores),'media_escore':float(scores.iloc[:,1].mean()),'media_EAP':float(theta.Theta.mean()),'DP_EAP':float(theta.Theta.std()),'TCM':len(m),'TRI':len(items),'ancoras':fixed.Item.tolist(),'itens_TCM_sinalizados':m.loc[(m.Discriminacao<.2)|(m.CPBisserial<.2),'Item'].tolist(),'itens_excluidos':[25] if profile=='2EM_MT' else [],'data_processamento':'2026-11-26' if profile=='2EM_MT' else '2026-11-24'}
+        audit[profile]={'N':len(scores),'media_escore':float(scores.iloc[:,1].mean()),'media_EAP':float(theta.Theta.mean()),'DP_EAP':float(theta.Theta.std()),'TCM':len(m),'TRI':len(items),'ancoras':fixed.Item.tolist(),'itens_TCM_sinalizados':m.loc[(m.Discriminacao<.2)|(m.CPBisserial<.2),'Item'].tolist(),'itens_excluidos':[25] if profile=='2EM_MT' else [],'itens_liberados':[6] if profile=='2EM_MT' else [],'data_processamento':'2026-11-26' if profile=='2EM_MT' else '2026-11-24'}
     (ROOT/'Relatorios/qa/auditoria_resultados.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2),encoding='utf-8')
     return audit
 

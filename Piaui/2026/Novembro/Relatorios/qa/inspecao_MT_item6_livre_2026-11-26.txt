@@ -1,0 +1,16 @@
+Atualização de Matemática em 26/11/2026
+Item 25 continua excluído da TCM e da TRI; item 6 mantido e livre para a, b, c.
+São 25 itens, 28.727 avaliados e dez âncoras: 7, 8, 13 a 20.
+Convergência: 63 iterações, secondordertest TRUE; condnum 2468,856.
+Auditoria direta do modelo em audita_item6_livre.R confirmou est=TRUE para
+a1, d e g do item 6, est=FALSE para as dez âncoras e ausência de rpa_025.
+As planilhas confirmam item 6 com SAEB=Não, a=0,537773, bSAEB=396,094488
+e c=0,126533. A TCM é idêntica à versão anterior sem item 25.
+Apêndices TCM, TRI e distribuição conferidos integralmente contra as planilhas.
+Oito páginas do relatório foram abertas para inspeção. A tabela de parâmetros
+permanece inteira na página 4. Encurtou-se o texto de método para manter a
+fonte do gráfico TCM na mesma página. Estilos e geometria preservados.
+Os PDF e PNG foram gerados; o renderizador retornou WinError 145 apenas
+durante a limpeza do perfil temporário do LibreOffice. Arquivos resultantes
+foram verificados separadamente por leitura e inspeção.
+Versão anterior preservada em Historico/2026-11-26_MT_sem25_item6_fixo.

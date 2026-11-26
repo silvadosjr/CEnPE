@@ -70,12 +70,13 @@ base <- base %>%
   dplyr::filter(disciplina_descricao == "MATEMÁTICA")
 
 # 2.3) Elimina itens/colunas específicas, se necessário
- suppressWarnings({
-   base <- base %>%
-     dplyr::select(-dplyr::any_of(c("rpa_025", "rp_025"))) # Possível conflito de gabarito
- })
+# suppressWarnings({
+#   base <- base %>%
+#     dplyr::select(-dplyr::any_of(c("rpa_024", "rp_024"))) # Possível conflito de gabarito
+# })
 
-
+# Exclusão do item 25 da TCM e da TRI por solicitação em 26/11/2026.
+base <- base %>% dplyr::select(-dplyr::all_of(c('rpa_025', 'rp_025')))
 
 # 2.4) Extrai gabarito: colunas "rp_*", exceto "rpa_*"
 gabar_cols <- base %>%
@@ -142,6 +143,8 @@ names(InfoItens)[toupper(names(InfoItens)) == 'CONHECIDO'] <- 'Conhecido'
 stopifnot(identical(as.integer(InfoItens$Item), as.integer(substring(auxnomesitens,5))))
 v_item_conhecido <- !is.na(InfoItens$Conhecido) & nzchar(trimws(InfoItens$Conhecido))
 # 
+# Item 6 liberado para estimação por solicitação em 26/11/2026.
+v_item_conhecido <- v_item_conhecido & InfoItens$Item != 6
 InfoItens <- InfoItens[v_item_conhecido, ]
 # 
 # InfoItens$JULHO <-paste0('rpa_0',InfoItens$JULHO)

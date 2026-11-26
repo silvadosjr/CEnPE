@@ -40,7 +40,7 @@ for profile in [os.environ['REPORT_PROFILE']] if os.environ.get('REPORT_PROFILE'
     dist=pd.read_excel(root/f'ResultadosTRI_{profile}/Simulado_VI/DistriAlunosClasse{profile[-2:]}2serie_S6.xlsx',index_col=0)
     for row,(classe,v) in zip(ap_dist.rows[1:],dist.iterrows(),strict=True):
         assert [c.text for c in row.cells]==[str(classe),fmt(v['N de alunos'],0),fmt(v.Percentual,3)+'%']
-    folder=qa/('2EM_MT_sem_item25_2026-11-26/final' if profile=='2EM_MT' else profile)
+    folder=qa/('2EM_MT_sem25_item6_livre_2026-11-26/final' if profile=='2EM_MT' else profile)
     pdf=folder/f'Relatorio_Tecnico_{profile}_S6_TCM_TRI.pdf'
     reader=PdfReader(pdf)
     assert 6 <= len(reader.pages) <= 9
@@ -52,6 +52,9 @@ for profile in [os.environ['REPORT_PROFILE']] if os.environ.get('REPORT_PROFILE'
     if profile=='2EM_MT':
         assert len(tcm)==len(tri)==25 and 25 not in tcm.Item.tolist() and 25 not in tri.Item.tolist()
         assert '26 de novembro de 2026' in pdf_text
+        assert len(tri[tri.SAEB=='Sim'])==10
+        assert tri.loc[tri.Item==6,'SAEB'].iloc[0]!='Sim'
+        assert 'item 6' in pdf_text
         assert 'Mantido na TRI; possível conflito' not in pdf_text
         assert '26 / 26' not in pdf_text and '25 / 25' in pdf_text
     for start in range(0,len(pages),4):
@@ -71,7 +74,7 @@ Slots editáveis: corpo integral da aplicação, cabeçalho VI, tabelas, gráfic
 Padrões: capa, síntese e método, resultados TCM, distribuição e parâmetros TRI, recomendações, referências e três apêndices numéricos. Gráficos e texto regenerados com S6; nenhuma ressalva factual de S5 reutilizada.
 Evidência: pacote_referencia_{profile}.json; auditoria_resultados.json; PNGs e PDF em {folder}. Campos PAGE preservados e updateFields solicitado no DOCX.
 Apêndices TCM, TRI e distribuição conferidos integralmente contra as planilhas. PDF com {len(reader.pages)} páginas; inspeção visual registrada separadamente após revisão das imagens.
-Atualização MT em 26/11/2026: exclusão do item 25 da TCM e da TRI, 25 itens válidos, onze âncoras e numeração original preservada. Referência de estilo mantida.
+Atualização MT em 26/11/2026: exclusão do item 25 da TCM e da TRI, 25 itens válidos, dez âncoras; item 6 livre para estimação de a, b e c e numeração original preservada. Referência de estilo mantida.
 '''
     (qa/f'artifact_{profile}.md').write_text(contract,encoding='utf-8')
     result[profile]={'paginas':len(reader.pages),'apendices_TCM_TRI_conferidos':True,'template_preservado':True,'sha256_docx':hashlib.sha256(final.read_bytes()).hexdigest()}

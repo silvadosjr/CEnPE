@@ -1,5 +1,5 @@
 $iter
-[1] 59
+[1] 63
 
 $converged
 [1] TRUE
@@ -8,7 +8,7 @@ $cand.t.var
 NULL
 
 $condnum
-[1] 2498.354
+[1] 2468.856
 
 $secondordertest
 [1] TRUE

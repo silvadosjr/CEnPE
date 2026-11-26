@@ -1,0 +1,71 @@
+SIMULADO VI — 2ª SÉRIE — NOVEMBRO DE 2026
+Atualização em 26/11/2026: Matemática sem o item 25 na TCM e na TRI.
+Resultados correntes de MT: 25 itens válidos (1 a 24 e 26), 28.727 avaliados
+e onze âncoras. Escores recalculados sobre 25 itens e TRI reestimada, com
+convergência em 59 iterações. Os relatórios DOCX e PDF de MT foram atualizados.
+Os escores novos foram conferidos individualmente contra os antigos: a
+diferença corresponde exatamente ao eventual acerto no item 25. Os parâmetros
+das onze âncoras foram preservados. Português permanece com 26 itens.
+Histórico integral de MT com item 25: Historico/2026-11-24_MT_com_item25.
+Para reproduzir a versão atual, executar os scripts MT S6 e gerar o relatório
+com REPORT_PROFILE=2EM_MT. O gerador prepara_programas.py já incorpora a exclusão.
+
+REGISTRO HISTÓRICO DO PRIMEIRO PROCESSAMENTO EM 24/11/2026
+O conteúdo a seguir descreve a execução anterior, substituída em MT pela
+atualização acima. A ressalva do item 25 fundamentou a solicitação de exclusão.
+
+Escopo
+Análises TCM e TRI 3PL de Língua Portuguesa e Matemática, no padrão dos
+simulados anteriores. São 33.883 registros por disciplina, dos quais 28.727
+avaliados (fl_avaliado = 1), com 26 itens em cada análise. As matrículas dos
+avaliados são únicas dentro de cada disciplina. Os gabaritos externos foram
+conferidos integralmente com as colunas rp da base. Os originais XLSX foram
+preservados.
+
+Resultados
+ResultadosTCM_2EM_LP/Simulado_VI e ResultadosTCM_2EM_MT/Simulado_VI:
+escores, indicadores dos itens e alternativas, tabelas e gráficos.
+ResultadosTRI_2EM_LP/Simulado_VI e ResultadosTRI_2EM_MT/Simulado_VI:
+parâmetros, habilidades EAP, resumos, distribuições, gráficos, ajustes,
+modelo RDS e registros de convergência e sessionInfo.
+Relatorios/2EM_LP e Relatorios/2EM_MT: relatórios técnicos DOCX e PDF.
+Relatorios/qa: auditorias de entrada, resultados e documentos; imagens das
+páginas e registros de preservação dos modelos de relatório.
+
+Ancoragem
+LP: itens 1, 2, 3, 12, 19 e 20.
+MT: itens 6, 7, 8, 13, 14, 15, 16, 17, 18, 19 e 20.
+Como nos scripts anteriores, são fixados aSAEB, bSAEB e c dos gabaritos,
+convertidos à escala latente para o mirt. As diferenças de arredondamento
+em relação às colunas a e b constam de auditoria_entrada.json. A coluna
+CONHECIDO de LP e Conhecido de MT contém referências de origem; todas as
+linhas preenchidas com parâmetros válidos são âncoras. Os nomes foram
+normalizados apenas em memória. Nenhuma indicação de anulação foi fornecida.
+
+Ressalva prioritária
+Item 25 de Matemática: gabarito recebido B. Acertos 19,358%, discriminação
+-0,028 e ponto-bisserial -0,069. A alternativa E teve 28,733% das escolhas
+e ponto-bisserial 0,442. A dificuldade TRI estimada chegou a 1.377,8 pontos,
+um ajuste extremo que não deve ser interpretado como dificuldade pedagógica
+válida. A convergência numérica não elimina esse problema. O item foi mantido
+com a chave recebida, sem troca automática nem exclusão. Revisar enunciado,
+resolução e gabarito; reprocessar TCM e TRI após eventual decisão de correção
+ou exclusão. Até lá, considerar essa ressalva na interpretação dos resultados.
+
+Reprodução
+Executar a partir da raiz do repositório. Usou-se R 4.5.0 e a biblioteca já
+instalada em C:/Users/Usuário/AppData/Local/R/win-library/4.5. Nesta sessão,
+LANG, LC_ALL e LC_CTYPE foram esvaziadas para respeitar a configuração nativa
+do R no Windows e R_LIBS_USER apontou para essa biblioteca.
+1. Programas/prepara_simulado_vi.R valida os dados e salva o RDS.
+2. Programas/TCM_2EM_LP_S6.R e TCM_2EM_MT_S6.R geram as análises TCM.
+3. Programas/Fit_3PL_Fix_2EM_LP_S6.R e Fit_3PL_Fix_2EM_MT_S6.R geram TRI.
+   Semente 20261124; registros de convergência nas pastas de resultados.
+4. Programas/gera_relatorios_simulado_vi.py audita resultados e gera DOCX,
+   reutilizando componentes dos geradores anteriores e referências de Setembro.
+5. O render_docx.py da habilidade documents gera os PDF/PNG para inspeção.
+6. Programas/verifica_relatorios.py confere apêndices e modelo e copia os PDF
+   verificados para as pastas finais. Requer que a renderização seja atual.
+
+O utilitário prepara_programas.py registra a adaptação dos scripts de Setembro.
+Os arquivos .log registram a execução. Ambas as calibrações convergiram.

@@ -16,17 +16,17 @@
     ],
     "itens_TCM_sinalizados": [],
     "itens_excluidos": [],
+    "itens_liberados": [],
     "data_processamento": "2026-11-24"
   },
   "2EM_MT": {
     "N": 28727,
     "media_escore": 9.429769902878824,
-    "media_EAP": 302.44694742898776,
-    "DP_EAP": 59.60025415356954,
+    "media_EAP": 301.29485449483,
+    "DP_EAP": 60.14630347630725,
     "TCM": 25,
     "TRI": 25,
     "ancoras": [
-      6,
       7,
       8,
       13,
@@ -41,6 +41,9 @@
     "itens_TCM_sinalizados": [],
     "itens_excluidos": [
       25
+    ],
+    "itens_liberados": [
+      6
     ],
     "data_processamento": "2026-11-26"
   }
